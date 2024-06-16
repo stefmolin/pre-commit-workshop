@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-25389D1SR4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-25389D1SR4");
+    </script>
+
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <meta name="robots" content="index,follow" />
+    <meta name="keywords" content="technology, open source, slides, Python" />
+    <meta name="theme-color" content="#000" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@StefanieMolin" />
+    <meta name="twitter:creator" content="@StefanieMolin" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Stefanie Molin" />
+    <meta name="author" content="Stefanie Molin" />
+    <meta name="referrer" content="origin" />
+    <meta
+      property="og:url"
+      content="https://stefaniemolin.com/TODO:repo-name/" />
+    <meta
+      property="og:title"
+      content="(Pre-)Commit to Better Code | Stefanie Molin" />
+    <meta name="description" content="TODO" />
+    <meta property="og:description" content="TODO" />
+    <meta property="og:image" content="TODO: social media preview image" />
+    <meta property="og:image:width" content="TODO:integer" />
+    <meta property="og:image:height" content="TODO:integer" />
+    <meta property="og:image:alt" content="(Pre-)Commit to Better Code" />
+
+    <title>(Pre-)Commit to Better Code workshop slides | Stefanie Molin</title>
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon/favicon-32x32.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon/favicon-16x16.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/favicon/android-chrome-192x192.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="/favicon/android-chrome-512x512.png" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/reveal.js@5.1.0/dist/reset.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/reveal.js@5.1.0/dist/reveal.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/reveal.js@5.1.0/dist/theme/simple.css" />
+
+    <!--TODO: syntax highlighting in code snippets (dark theme)-->
+    <!-- <link
+      rel="stylesheet"
+      href="https://unpkg.com/reveal.js@5.1.0/plugin/highlight/monokai.css" /> -->
+    <!--TODO: syntax highlighting in code snippets (light theme)-->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/stackoverflow-light.min.css" />
+    <!--TODO: add all the jQuery stuff for the timers, etc. (may not need them all with this version of Reveal.js)-->
+
+    <!-- Font Awesome icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.1/css/all.min.css"
+      rel="stylesheet"
+      type="text/css" />
+
+    <style type="text/css">
+      :root {
+        --r-heading1-size: 2em;
+        --r-heading2-size: 1.2em;
+        --r-heading3-size: 1em;
+        --r-heading4-size: 0.85em;
+      }
+      .reveal .slides > section {
+        text-align: left !important;
+      }
+      h6 {
+        font-size: 0.8em;
+      }
+      ul,
+      ol,
+      p {
+        font-size: 0.75em;
+      }
+      ul > li:not(:last-child),
+      ol > li:not(:last-child) {
+        margin-bottom: 0.5em;
+      }
+      .center {
+        text-align: center;
+      }
+      small {
+        font-size: 0.25em !important;
+        text-align: center;
+      }
+      .footer {
+        position: absolute;
+        bottom: 25px;
+        text-wrap: nowrap;
+        width: 100%;
+        text-align: center;
+        z-index: 100;
+        font-size: 0.75em;
+      }
+      .license {
+        position: absolute;
+        bottom: 10px;
+        text-wrap: nowrap;
+        width: 100%;
+        text-align: center;
+        z-index: 100;
+        font-size: 0.25em;
+      }
+      pre > code {
+        /* TODO: add this to the base presentation */
+        /* TODO: some of these should probably have a background on them */
+        padding: 20px !important;
+        border-radius: 10px;
+      }
+      pre.code-wrapper {
+        /* TODO: this too */
+        border-radius: 10px;
+      }
+      .hide-line-numbers .hljs-ln-numbers {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="license">
+        License:
+        <a
+          href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
+          style="z-index: 1"
+          target="_blank"
+          rel="noopener noreferrer">
+          CC BY-NC-SA 4.0
+        </a>
+      </div>
+      <div class="footer">
+        <a href="https://stefaniemolin.com">stefaniemolin.com</a>
+      </div>
+      <div class="slides">
+        <section>
+          <h1 class="center">(Pre-)Commit to Better Code</h1>
+          <br />
+          <br />
+          <h2 class="center">Stefanie Molin</h2>
+        </section>
+        <section>
+          <h2>Bio</h2>
+          <ul>
+            <li>👩‍💻 Software engineer at Bloomberg in NYC</li>
+            <li>
+              🚀 Core developer of
+              <a
+                href="https://github.com/numpy/numpydoc"
+                rel="noopener noreferrer"
+                >numpydoc</a
+              >
+            </li>
+            <li>
+              ✍ Author of "<a
+                href="https://stefaniemolin.com/books/Hands-On-Data-Analysis-with-Pandas-2nd-edition/"
+                >Hands-On Data Analysis with Pandas</a
+              >"
+            </li>
+            <li>🎓 BS in operations research from Columbia University</li>
+            <li>
+              🎓 MS in computer science (ML specialization) from Georgia Tech
+            </li>
+          </ul>
+        </section>
+        <!--TODO: slides go here-->
+        <section>
+          <h2>Prerequisites</h2>
+          <div>
+            <ul>
+              <li>
+                Comfort writing Python code and working with Git on the command
+                line using basic commands (<em>e.g.</em>, <code>clone</code>,
+                <code>status</code>, <code>diff</code>, <code>add</code>,
+                <code>commit</code>, and <code>push</code>)
+              </li>
+              <li>
+                Have Python and Git installed on your computers, as well as a
+                text editor for writing code (<em>e.g.</em>,
+                <a
+                  href="https://code.visualstudio.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Visual Studio Code</a
+                >)
+              </li>
+              <li>TODO: Clone this repository</li>
+            </ul>
+          </div>
+        </section>
+        <section>
+          <h2>Agenda</h2>
+          <ol>
+            <li>Setting Up Pre-Commit Hooks</li>
+            <li>Creating a Pre-Commit Hook</li>
+          </ol>
+        </section>
+        <section>
+          <h1 class="center">Setting Up Pre-Commit Hooks</h1>
+        </section>
+        <section>
+          <h2>Overview of Git hooks</h2>
+          <div>
+            <ul>
+              <li class="fragment fade-in" data-fragment-index="1">
+                Scripts triggered based on actions taken on a repository
+                (<em>e.g.</em>, committing changes)
+              </li>
+              <li class="fragment fade-in" data-fragment-index="2">
+                Hooks can be client-side or server-side
+              </li>
+              <li class="fragment fade-in" data-fragment-index="3">
+                Stored in the <code>.git/hooks/</code> directory of your
+                repository, but excluded from version control
+              </li>
+            </ul>
+            <pre class="fragment fade-in" data-fragment-index="3">
+              <code data-trim data-highlighted="no">
+                .git
+                └── hooks
+                    ├── commit-msg.sample
+                    ├── pre-commit.sample
+                    ├── pre-merge-commit.sample
+                    ├── pre-push.sample
+                    └── [...]
+              </code>
+            </pre>
+          </div>
+          <aside class="notes">
+            <p>Let's start by talking about Git hooks.</p>
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h2>Pre-commit hooks</h2>
+          <div>
+            <ul>
+              <li class="fragment fade-in" data-fragment-index="1">
+                One pre-commit hook executable per repository
+              </li>
+              <li class="fragment fade-in" data-fragment-index="2">
+                Triggered by Git when you run <code>git commit</code>
+              </li>
+              <li class="fragment fade-in" data-fragment-index="3">
+                Often used to enforce coding standards (<em>e.g.</em>, linting
+                and formatting)
+              </li>
+              <li class="fragment fade-in" data-fragment-index="4">
+                Should only include checks that run quickly
+              </li>
+              <li class="fragment fade-in" data-fragment-index="5">
+                The commit fails if <em>any</em> of the checks fail
+              </li>
+            </ul>
+          </div>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h2>How to enable</h2>
+          <div>
+            <ol>
+              <li class="fragment fade-in" data-fragment-index="1">
+                Create an executable script that runs any checks you want to
+                include and save it as <code>.git/hooks/pre-commit</code>,
+              </li>
+              <li class="fragment fade-in" data-fragment-index="2">
+                or, use a tool like <code>pre-commit</code> and include the hook
+                configuration in version control.
+              </li>
+            </ol>
+          </div>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h2>Pre-commit hooks != <code>pre-commit</code></h2>
+          <div>
+            <ul>
+              <li class="fragment fade-in" data-fragment-index="1">
+                <code>pre-commit</code> is "a multi-language package manager for
+                pre-commit hooks." (<a
+                  href="https://pre-commit.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >source</a
+                >)
+              </li>
+              <li class="fragment fade-in" data-fragment-index="2">
+                <code>pre-commit</code> installs its own script as the
+                pre-commit hook executable for your repository.
+              </li>
+              <li class="fragment fade-in" data-fragment-index="3">
+                The installed pre-commit hook then runs <code>pre-commit</code>,
+                which in turn runs any checks you specify using a YAML file.
+              </li>
+            </ul>
+          </div>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h2>Setup</h2>
+          <div>
+            <ol>
+              <li
+                class="fragment fade-in-then-semi-out"
+                data-fragment-index="1">
+                Install the <code>pre-commit</code> package in your repository.
+              </li>
+              <li
+                class="fragment fade-in-then-semi-out"
+                data-fragment-index="2">
+                Define the checks you want to use in a file called
+                <code>.pre-commit-config.yaml</code>.
+              </li>
+              <li
+                class="fragment fade-in-then-semi-out"
+                data-fragment-index="3">
+                Have <code>pre-commit</code> install itself as your pre-commit
+                hook.
+              </li>
+              <li
+                class="fragment fade-in-then-semi-out"
+                data-fragment-index="4">
+                Work on your code as usual.
+              </li>
+            </ol>
+          </div>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h3>Package installation</h3>
+          <pre>
+            <code data-trim class="language-shell">
+              $ python3 -m pip install pre-commit
+            </code>
+          </pre>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h3>Basic configuration</h3>
+          <div class="r-stack" style="justify-content: start">
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="0"
+              style="margin: 0">
+              Defined in <code>.pre-commit-config.yaml</code>:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="1"
+              style="margin: 0">
+              The <code>repos</code> section lists the repositories to use:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="2"
+              style="margin: 0">
+              This represents the configuration for a single repository:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="3"
+              style="margin: 0">
+              The URL of the repository to clone:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="4"
+              style="margin: 0">
+              The tag or commit hash to clone at:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="5"
+              style="margin: 0">
+              The hooks to run from that repository:
+            </p>
+          </div>
+          <div class="center fragment" data-fragment-index="0">
+            <pre>
+              <code data-trim class="language-yaml" data-line-numbers="1-8|1|2-8|2|3|4-8" data-fragment-index="1">
+                repos:
+                  - repo: https://github.com/pre-commit/pre-commit-hooks
+                    rev: v4.5.0
+                    hooks:
+                      - id: check-toml
+                      - id: check-yaml
+                      - id: end-of-file-fixer
+                      - id: trailing-whitespace
+              </code>
+            </pre>
+            <small
+              ><em
+                >Source:
+                <a
+                  href="https://stefaniemolin.com/articles/devx/pre-commit/setup-guide/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  >How to Set Up Pre-Commit Hooks</a
+                >
+                by Stefanie Molin</em
+              ></small
+            >
+          </div>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h3>Git hook installation</h3>
+          <p>
+            While the <code>.pre-commit-config.yaml</code> file lives in version
+            control, each contributor must run this locally:
+          </p>
+          <pre>
+            <code data-trim class="language-shell hide-line-numbers" data-line-numbers="1">
+              $ pre-commit install
+              pre-commit installed at .git/hooks/pre-commit
+            </code>
+          </pre>
+          <aside class="notes">
+            <!--TODO: maybe this slide is a good place to mention that all contributors need to do this-->
+            <p>
+              When we run this command, <code>pre-commit</code> installs an
+              executable at <code>.git/hooks/pre-commit</code>:
+            </p>
+          </aside>
+        </section>
+        <section>
+          <h3>Add the configuration to version control</h3>
+          <p>
+            The <code>check-yaml</code> hook we included will make sure that the
+            <code>.pre-commit-config.yaml</code> file (and any other YAML files
+            in this repository) are valid YAML. Try committing it:
+          </p>
+          <pre>
+            <code data-trim class="language-shell hide-line-numbers" data-line-numbers="1-2|3-7">
+              $ git add .pre-commit-config.yaml
+              $ git commit -m "Add pre-commit config"
+              check toml..........................(no files to check)Skipped
+              check yaml..............................................Passed
+              fix end of files........................................Passed
+              trim trailing whitespace................................Passed
+            </code>
+          </pre>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h2>Exercise</h2>
+          <p>
+            There are more hooks provided by the repository that we are
+            currently using. Take a moment to look through their documentation,
+            and add some additional hooks to the setup that are relevant to your
+            work. Be sure to commit your changes.
+          </p>
+          <p class="center">
+            <a
+              href="https://github.com/pre-commit/pre-commit-hooks"
+              target="_blank"
+              rel="noopener noreferrer"
+              >github.com/pre-commit/pre-commit-hooks</a
+            >
+          </p>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h2>Example solution</h2>
+          <p>
+            Adding these two hooks ensures that your scripts are actually
+            executable:
+          </p>
+          <pre>
+            <code data-trim class="language-diff hide-line-numbers" data-line-numbers="5-6">
+               repos:
+                 - repo: https://github.com/pre-commit/pre-commit-hooks
+                   rev: v4.5.0
+                   hooks:
+              +      - id: check-executables-have-shebangs
+              +      - id: check-shebang-scripts-are-executable
+                     - id: check-toml
+                     - id: check-yaml
+                     - id: end-of-file-fixer
+                     - id: trailing-whitespace
+            </code>
+          </pre>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h2>Third-party hooks</h2>
+          <p>
+            We are free to use hooks from multiple repositories. A
+            non-exhaustive list of compatible repositories can be found at
+            <a
+              href="https://pre-commit.com/hooks.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              >pre-commit.com/hooks.html</a
+            >.
+          </p>
+          <div class="fragment">
+            <p>
+              Let's add
+              <code
+                ><a
+                  href="https://docs.astral.sh/ruff/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >ruff</a
+                ></code
+              >
+              to lint and format our Python code, since it is "10-100x faster
+              than existing linters (like Flake8) and formatters (like
+              Black),"<sup>*</sup>
+              and speed very is important with pre-commit hooks.
+            </p>
+
+            <hr align="left" style="width: 33%" />
+            <div style="padding-left: 10px; width: 90%; margin-bottom: -15px">
+              <small
+                ><sup>*</sup> Source:
+                <a
+                  href="https://docs.astral.sh/ruff/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><code>ruff</code> homepage</a
+                >
+                as of June 16, 2024</small
+              >
+            </div>
+          </div>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h3>Adding <code>ruff</code></h3>
+          <div class="r-stack" style="justify-content: start">
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="0"
+              style="margin: 0">
+              Create a new entry under the <code>repos</code> key:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="1"
+              style="margin: 0">
+              The <code>ruff</code> pre-commit hook is in a separate repository:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="2"
+              style="margin: 0">
+              The tag or commit hash to clone at:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="3"
+              style="margin: 0">
+              The hooks to run from that repository:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="4"
+              style="margin: 0">
+              Use <code>args</code> to pass command line arguments to the hook:
+            </p>
+          </div>
+          <div class="center fragment" data-fragment-index="0">
+            <pre>
+            <code data-trim class="language-yaml" data-line-numbers="10-15|10|11|12-15|14" data-fragment-index="1">
+              repos:
+                - repo: https://github.com/pre-commit/pre-commit-hooks
+                  rev: v4.5.0
+                  hooks:
+                    - id: check-toml
+                    - id: check-yaml
+                    - id: end-of-file-fixer
+                    - id: trailing-whitespace
+
+                - repo: https://github.com/astral-sh/ruff-pre-commit
+                  rev: v0.4.0
+                  hooks:
+                    - id: ruff
+                      args: [--fix, --exit-non-zero-on-fix, --show-fixes]
+                    - id: ruff-format
+            </code>
+          </pre>
+          </div>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h3>Commit your changes</h3>
+          <div class="r-stack" style="justify-content: start">
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="0"
+              style="margin: 0">
+              This will trigger an update to the environment used for the
+              checks:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="1"
+              style="margin: 0">
+              All new or modified hooks need to be updated in the environment:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="2"
+              style="margin: 0">
+              This will be slower the first time, but persists until
+              modification:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="3"
+              style="margin: 0">
+              Hook order in the configuration file matters:
+            </p>
+          </div>
+          <div class="center fragment" data-fragment-index="0">
+            <pre>
+            <code data-trim class="language-shell hide-line-numbers" data-line-numbers="1-2|3|4-5|10-11" data-fragment-index="1">
+              $ git add .pre-commit-config.yaml
+              $ git commit -m "Add ruff pre-commit hooks"
+              [INFO] Installing environment for [...]/ruff-pre-commit.
+              [INFO] Once installed this environment will be reused.
+              [INFO] This may take a few minutes...
+              check toml.............................................Passed
+              check yaml.............................................Passed
+              fix end of files.......................................Passed
+              trim trailing whitespace...............................Passed
+              ruff...................................................Passed
+              ruff-format............................................Passed
+            </code>
+          </pre>
+          </div>
+          <!--TODO: does this happen for the initial set? maybe include that-->
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h3>Testing the <code>ruff</code> pre-commit hooks</h3>
+          <p>
+            Create a new file called <code>example.py</code> with the following
+            contents, and try to commit it:
+          </p>
+          <pre>
+            <code data-trim class="language-python">
+              import re
+
+              def my_function(a):
+                  """My function."""
+                  pass
+            </code>
+          </pre>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h3>The commit fails</h3>
+          <div class="r-stack" style="justify-content: start">
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="0"
+              style="margin: 0">
+              No TOML or YAML files to check:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="1"
+              style="margin: 0">
+              No issues with these checks:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="2"
+              style="margin: 0">
+              <code>ruff</code> modified a file, which is an automatic failure:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="3"
+              style="margin: 0">
+              <code>ruff</code> found an unused import when linting:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="4"
+              style="margin: 0">
+              <code>ruff</code> summarizes its findings (sometimes we have to
+              fix it):
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="5"
+              style="margin: 0">
+              <code>ruff</code> also made a change while formatting the file:
+            </p>
+          </div>
+          <div class="center fragment" data-fragment-index="0">
+            <pre>
+            <code data-trim class="language-shell hide-line-numbers" data-line-numbers="1-2|3-4|5-14|10-12|14|16-20" data-fragment-index="1">
+              check toml..........................(no files to check)Skipped
+              check yaml..........................(no files to check)Skipped
+              fix end of files........................................Passed
+              trim trailing whitespace................................Passed
+              ruff....................................................Failed
+              - hook id: ruff
+              - exit code: 1
+              - files were modified by this hook
+
+              Fixed 1 error:
+              - example.py:
+                  1 × F401 (unused-import)
+
+              Found 1 error (1 fixed, 0 remaining).
+
+              ruff-format.............................................Failed
+              - hook id: ruff-format
+              - files were modified by this hook
+
+              1 file reformatted
+            </code>
+          </pre>
+          </div>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h3>Verify the changes before trying again</h3>
+          <pre>
+              <code data-trim class="language-diff">
+                $ git diff example.py
+                diff --git a/example.py b/example.py
+                index ebb29eb..ad4c89e 100644
+                --- a/example.py
+                +++ b/example.py
+                @@ -1,5 +1,3 @@
+                -import re
+                -
+                def my_function(a):
+                    """My function."""
+                    pass
+              </code>
+            </pre>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h3>The commit succeeds now</h3>
+          <pre>
+            <code data-trim class="language-shell hide-line-numbers" data-line-numbers="1-2,9-11">
+              $ git add example.py
+              $ git commit -m "Add example.py"
+              check toml..........................(no files to check)Skipped
+              check yaml..........................(no files to check)Skipped
+              fix end of files........................................Passed
+              trim trailing whitespace................................Passed
+              ruff....................................................Passed
+              ruff-format.............................................Passed
+              [example 79b0f28] Add example.py
+               1 file changed, 3 insertions(+)
+               create mode 100644 example.py
+            </code>
+          </pre>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h2>Exercise</h2>
+          <p>
+            Look through the hook repositories at
+            <a
+              href="https://pre-commit.com/hooks.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              >pre-commit.com/hooks.html</a
+            >
+            to find the <code>numpydoc-validation</code> one, and add it to your
+            configuration. Be sure to commit your changes.
+          </p>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h2>Solution</h2>
+          <p>Adding the <code>numpydoc-validation</code> hook:</p>
+          <pre>
+            <code data-trim class="language-yaml">
+              - repo: https://github.com/numpy/numpydoc
+                rev: v1.7.0
+                hooks:
+                  - id: numpydoc-validation
+            </code>
+          </pre>
+
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h2>Running hooks on demand</h2>
+          <div class="r-stack" style="justify-content: start">
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="0"
+              style="margin: 0">
+              Run all hooks on staged changes:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="1"
+              style="margin: 0">
+              Run all hooks on <code>example.py</code>:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="2"
+              style="margin: 0">
+              Run only the <code>numpydoc-validation</code> hook on all files:
+            </p>
+          </div>
+          <div class="center fragment" data-fragment-index="0">
+            <pre>
+            <code data-trim class="language-shell hide-line-numbers" data-line-numbers="1|2|3" data-fragment-index="1">
+              $ pre-commit run
+              $ pre-commit run --files example.py
+              $ pre-commit run numpydoc-validation --all-files
+            </code>
+          </pre>
+          </div>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h2>Validating docstrings</h2>
+          <div class="r-stack" style="justify-content: start">
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="0"
+              style="margin: 0">
+              Run <code>numpydoc-validation</code> hook on
+              <code>example.py</code>:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="1"
+              style="margin: 0">
+              <code>example.py</code> fails the docstring checks:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="2"
+              style="margin: 0">
+              Without any additional configuration, all numpydoc checks are run:
+            </p>
+          </div>
+          <div class="center fragment" data-fragment-index="0">
+            <pre>
+            <code data-trim class="language-shell hide-line-numbers" data-line-numbers="1|2-4|6-18" data-fragment-index="1">
+              $ pre-commit run numpydoc-validation --files example.py
+              numpydoc-validation.....................................Failed
+              - hook id: numpydoc-validation
+              - exit code: 1
+
+              +---------------------+-------+------------------------------+
+              | item                | check | description                  |
+              +=====================+=======+==============================+
+              | example             | GL08  | The object missing docstring |
+              +---------------------+-------+------------------------------+
+              | example.my_function | ES01  | No extended summary found    |
+              +---------------------+-------+------------------------------+
+              | example.my_function | PR01  | Param {'a'} not documented   |
+              +---------------------+-------+------------------------------+
+              | example.my_function | SA01  | See Also section not found   |
+              +---------------------+-------+------------------------------+
+              | example.my_function | EX01  | No examples section found    |
+              +---------------------+-------+------------------------------+
+
+            </code>
+          </pre>
+            <small><em>Output abbreviated.</em></small>
+          </div>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h2>Modifying hook behavior</h2>
+          <p>Two options:</p>
+          <ul>
+            <li>via command line arguments</li>
+            <li>via a configuration file</li>
+          </ul>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h3>Modifying hook behavior with command line arguments</h3>
+          <p>
+            For behavior that you only want to happen when the tool is run as a
+            pre-commit hook (we want the issues fixed automatically here, but
+            perhaps when we run <code>ruff</code> on our own, we just want it to
+            report on what it would have changed):
+          </p>
+          <pre>
+            <code data-trim class="language-yaml hide-line-numbers" data-line-numbers="4-5">
+              - repo: https://github.com/astral-sh/ruff-pre-commit
+                rev: v0.4.0
+                hooks:
+                  - id: ruff
+                    args: [--fix, --exit-non-zero-on-fix, --show-fixes]
+                  - id: ruff-format
+            </code>
+          </pre>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h3>Modifying hook behavior with a configuration file</h3>
+          <p>
+            For settings that should be applied for every invocation of the
+            tool:
+          </p>
+          <pre>
+            <code data-trim class="language-toml hide-line-numbers" data-line-numbers="2-15|16-19">
+              # pyproject.toml (tool must support this file)
+              [tool.ruff]
+              line-length = 88
+              select = [
+                  "C",  # mccabe rules
+                  "F",  # pyflakes rules
+                  "E",  # pycodestyle error rules
+                  "W",  # pycodestyle warning rules
+                  "B",  # flake8-bugbear rules
+                  "I",  # isort rules
+              ]
+              ignore = [
+                  "C901",  # max-complexity-10
+                  "E501",  # line-too-long
+              ]
+
+              [tool.ruff.format]
+              indent-style = "space"
+              quote-style = "single"
+            </code>
+          </pre>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h2>Exercise</h2>
+          <p>
+            Configure the <code>numpydoc-validation</code> hook to ignore the
+            checks ES01, EX01, SA01, and SS06. Then address any issues in
+            <code>example.py</code> so that it passes the checks.
+          </p>
+          <p class="center">
+            <a
+              href="https://numpydoc.readthedocs.io/en/latest/validation.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              >numpydoc.readthedocs.io/en/latest/validation.html</a
+            >
+          </p>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h2>Solution</h2>
+          <p>
+            First, specify which checks to report in the configuration file:
+          </p>
+          <pre>
+            <code data-trim class="language-toml">
+              # pyproject.toml (this tool supports pyproject.toml)
+              [tool.numpydoc_validation]
+              checks = [
+                  "all",  # report on all checks
+                  "ES01", # but don't require an extended summary
+                  "EX01", # or examples
+                  "SA01", # or a see also section
+                  "SS06", # and don't require the summary to fit on one line
+              ]
+            </code>
+          </pre>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <p>Then, update the docstrings in <code>example.py</code>:</p>
+          <pre>
+            <code data-trim class="language-python">
+              """Utility functions."""
+
+              def my_function(a):
+                  """
+                  My function.
+
+                  Parameters
+                  ----------
+                  a : int
+                      The value to use.
+                  """
+                  pass
+            </code>
+          </pre>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h2>Excluding files</h2>
+          <p>
+            The docstring checks are strict, but things like the test suite
+            won't end up in our documentation, so we are creating extra work.
+            Let's restrict when the docstring checks will run:
+          </p>
+          <pre>
+            <code data-trim class="language-diff hide-line-numbers" data-line-numbers="5">
+              - repo: https://github.com/numpy/numpydoc
+                rev: v1.7.0
+                hooks:
+                  - id: numpydoc-validation
+            +       exclude: (tests|docs)/.*
+            </code>
+          </pre>
+          <p class="fragment">
+            <em>
+              Tip: Inclusive filtering on the file name is also supported with
+              <code>files</code>. File type filtering is also available. See the
+              <a
+                href="https://pre-commit.com/#pre-commit-configyaml---hooks"
+                target="_blank"
+                rel="noopener noreferrer"
+                >pre-commit documentation</a
+              >
+              for all supported options.
+            </em>
+          </p>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h2>Keeping hooks up-to-date</h2>
+          <p>
+            Run <code>pre-commit autoupdate</code> to update all hooks to their
+            latest versions (the <code>rev</code> key in the YAML):
+          </p>
+          <pre>
+            <code data-trim class="language-shell hide-line-numbers" data-line-numbers="1">
+              $ pre-commit autoupdate
+              Updating [...]/pre-commit-hooks ... updating v4.5.0 -> v4.6.0.
+              Updating [...]/ruff-pre-commit ... updating v0.1.5 -> v0.4.9.
+              Updating [...]/numpy/numpydoc ... already up to date.
+            </code>
+          </pre>
+          <p class="fragment">
+            <b>Warning:</b> Make sure these new versions work with your setup by
+            running <code>pre-commit run --all-files</code>.
+          </p>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h2>Good to know</h2>
+          <ul>
+            <li class="fragment">
+              Pass <code>--no-verify</code> when committing to bypass the
+              checks.
+            </li>
+            <li class="fragment">
+              Hooks can be configured to run at different Git stages
+              (<em>e.g.</em>, pre-push).
+            </li>
+          </ul>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+
+        <section>
+          <h1 class="center">Creating a Pre-Commit Hook</h1>
+        </section>
+        <section>
+          <h2>Slide title</h2>
+          <h3>Slide subtitle</h3>
+          <aside class="notes">
+            <p>Speaker notes</p>
+          </aside>
+        </section>
+        <!--TODO: slides end here-->
+        <section id="thank-you">
+          <h2>Thank you!</h2>
+          <p style="font-size: 0.65em">
+            <em
+              >I hope you enjoyed the workshop. You can follow my work on the
+              following platforms:</em
+            >
+          </p>
+          <div
+            style="
+              display: flex;
+              justify-content: space-evenly;
+              align-items: center;
+            ">
+            <div style="text-align: center; width: 30%">
+              <img
+                class="qr-code"
+                src="https://raw.githubusercontent.com/stefmolin/pandas-workshop/main/media/qr-code.png" />
+            </div>
+            <div style="font-size: 0.85em">
+              <div style="display: flex">
+                <i
+                  class="fa fa-globe fa-fw"
+                  style="padding-right: 4px; margin: auto 0"></i>
+                <a href="https://stefaniemolin.com" rel="noopener noreferrer">
+                  stefaniemolin.com
+                </a>
+              </div>
+              <div style="display: flex">
+                <i
+                  class="fab fa-github fa-fw"
+                  style="padding-right: 4px; margin: auto 0"></i>
+                <a
+                  href="https://github.com/stefmolin"
+                  rel="noopener noreferrer"
+                  target="_blank">
+                  github.com/stefmolin
+                </a>
+              </div>
+              <div style="display: flex">
+                <i
+                  class="fab fa-twitter fa-fw"
+                  style="padding-right: 4px; margin: auto 0"></i>
+                <a
+                  href="https://twitter.com/StefanieMolin"
+                  rel="noopener noreferrer"
+                  target="_blank">
+                  twitter.com/StefanieMolin
+                </a>
+              </div>
+              <div style="display: flex">
+                <i
+                  class="fab fa-linkedin fa-fw"
+                  style="padding-right: 4px; margin: auto 0"></i>
+                <a
+                  href="https://linkedin.com/in/stefanie-molin"
+                  rel="noopener noreferrer"
+                  target="_blank">
+                  linkedin.com/in/stefanie-molin
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script src="https://unpkg.com/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+
+    <!--syntax highlighting in code snippets-->
+    <script src="https://unpkg.com/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        controls: false, // TODO
+        hash: true,
+        slideNumber: true, // TODO - remove this later
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
