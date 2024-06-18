@@ -1162,6 +1162,7 @@
           <h2>Recipe</h2>
           <ol>
             <li class="fragment">Implement the check(s) in a function.</li>
+            <li class="fragment">Wrap the function in a CLI.</li>
             <li class="fragment">Make it installable.</li>
             <li class="fragment">Configure it as a hook.</li>
           </ol>
@@ -1297,12 +1298,217 @@
                 name = Path(filename).stem
 
                 # check the length
-                failure = len(name) < min_len
+                if failure := len(name) < min_len:
+                    print(f'Name too short ({min_len=}): {filename}')
 
                 # convert to an exit code for later
                 return int(failure)
           </code>
         </pre>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h2>2. Wrap your function in a CLI</h2>
+          <div class="r-stack" style="justify-content: start">
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="0"
+              style="margin: 0">
+              We will use <code>argparse</code> for this example:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="1"
+              style="margin: 0">
+              At a minimum, we need to accept filenames:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="2"
+              style="margin: 0">
+              We can then parse the received arguments:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="3"
+              style="margin: 0">
+              Run your check(s) on each item in <code>args.filenames</code>:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="4"
+              style="margin: 0">
+              Return 1 if there were any failures, 0 otherwise:
+            </p>
+          </div>
+          <div class="center fragment" data-fragment-index="0">
+            <pre>
+            <code data-trim class="language-python hide-line-numbers" data-line-numbers="1,5|6-10|2,4,12|14|15" data-fragment-index="1">
+              import argparse
+              from typing import Sequence
+
+              def main(argv: Sequence[str] | None = None) -> int:
+                  parser = argparse.ArgumentParser(prog='your-hook')
+                  parser.add_argument(
+                      'filenames',
+                      nargs='*',
+                      help='Filenames to process.',
+                  )
+
+                  args = parser.parse_args(argv)
+
+                  failures = ?  # run your check(s) on `args.filenames`
+                  return 1 if failures else 0  # must be 0 or 1 this time
+            </code>
+          </pre>
+          </div>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h3>Simplified example from <code>exif-stripper</code></h3>
+          <div class="r-stack" style="justify-content: start">
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="0"
+              style="margin: 0">
+              Create the <code>ArgumentParser</code>:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="1"
+              style="margin: 0">
+              Parse the received arguments:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="2"
+              style="margin: 0">
+              Process each file, storing the outcomes (these are Boolean
+              values):
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="3"
+              style="margin: 0">
+              Aggregate the results, returning 1 if there were any failures, 0
+              otherwise:
+            </p>
+          </div>
+          <div class="center fragment" data-fragment-index="0">
+            <pre>
+            <code data-trim class="language-python hide-line-numbers" data-line-numbers="1,5-10|2,4,12|13-17|18" data-fragment-index="1">
+              import argparse
+              from typing import Sequence
+
+              def main(argv: Sequence[str] | None = None) -> int:
+                  parser = argparse.ArgumentParser(prog='strip-exif')
+                  parser.add_argument(
+                      'filenames',
+                      nargs='*',
+                      help='Filenames to process.',
+                  )
+
+                  args = parser.parse_args(argv)
+
+                  results = [
+                      process_image(filename)
+                      for filename in args.filenames
+                  ]
+                  return min(1, sum(results))
+            </code>
+          </pre>
+            <small>
+              <em
+                >Source:
+                <a
+                  href="https://github.com/stefmolin/exif-stripper"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  >stefmolin/exif-stripper</a
+                ></em
+              ></small
+            >
+          </div>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h2>Exercise</h2>
+          <p>
+            Create a CLI for the check function you created in the previous
+            exercise. Add an optional command line argument to modify how your
+            check behaves.
+          </p>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h2>Example solution</h2>
+          <div class="r-stack" style="justify-content: start">
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="0"
+              style="margin: 0">
+              Here, we continue with the hook requiring filenames of a certain
+              length:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="1"
+              style="margin: 0">
+              Most of this is identical to the example:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="2"
+              style="margin: 0">
+              But, this time we add the minimum length as an optional argument:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="3"
+              style="margin: 0">
+              When we run the checks on each file, we also pass it in:
+            </p>
+          </div>
+          <div class="center fragment" data-fragment-index="0">
+            <pre>
+          <code data-trim class="language-python" data-line-numbers="1-26|1-12,19-26|13-18|23" data-fragment-index="1">
+            import argparse
+            from typing import Sequence
+
+            def main(argv: Sequence[str] | None = None) -> int:
+                parser = argparse.ArgumentParser(
+                    prog='validate-filename'
+                )
+                parser.add_argument(
+                    'filenames',
+                    nargs='*',
+                    help='Filenames to process.',
+                )
+                parser.add_argument(
+                    '--min-len',
+                    default=3,
+                    type=int,
+                    help='Minimum length for a filename.',
+                )
+
+                args = parser.parse_args(argv)
+
+                results = [
+                    validate_filename(filename, args.min_len)
+                    for filename in args.filenames
+                ]
+                return min(1, sum(results))
+          </code>
+        </pre>
+          </div>
           <aside class="notes">
             <!--TODO-->
           </aside>
