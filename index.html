@@ -1159,10 +1159,159 @@
           <h1 class="center">Creating a Pre-Commit Hook</h1>
         </section>
         <section>
+          <h2>Recipe</h2>
+          <ol>
+            <li class="fragment">Implement the check(s) in a function.</li>
+            <li class="fragment">Make it installable.</li>
+            <li class="fragment">Configure it as a hook.</li>
+          </ol>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h2>1. Implement the check(s) in a function</h2>
+          <pre>
+            <code data-trim class="language-python hide-line-numbers" data-line-numbers="1-11|3,5|6,9|7,11">
+              from typing import Sequence
+
+              def perform_check(filenames: Sequence[str]) -> int:
+                  """
+                  Given a sequence of filenames,
+                  perform the check(s),
+                  return 1 if there is a failure, 0 otherwise.
+                  """
+                  failure = ?  # your logic
+
+                  return 1 if failure else 0
+            </code>
+          </pre>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h3>Toy example</h3>
+          <p>Only allow committing one file at a time:</p>
+          <pre>
+            <code data-trim class="language-python hide-line-numbers" data-line-numbers="9-11">
+              from typing import Sequence
+
+              def perform_check(filenames: Sequence[str]) -> int:
+                  """
+                  Given a sequence of filenames,
+                  check the number of files,
+                  return 1 if there is a failure, 0 otherwise.
+                  """
+                  failure = len(filenames) > 1
+
+                  return 1 if failure else 0
+            </code>
+          </pre>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h3>Simplified example from <code>exif-stripper</code></h3>
+          <p>
+            This hook removes metadata from images, and the check is implemented
+            to run on a single file at once.
+          </p>
+          <div class="center">
+            <pre>
+            <code data-trim class="language-python hide-line-numbers" data-line-numbers="1-15|3|6-11|15">
+              from PIL import Image, UnidentifiedImageError
+
+              def process_image(filename: str) -> bool:  # given a file
+                  has_changed = False
+                  try:
+                      with Image.open(filename) as im:
+                          if exif := im.getexif():  # run check
+                              exif.clear()  # edit file to fix the issue
+                              im.save(filename)
+                              has_changed = True
+                              print(f'Stripped metadata from {filename}')
+                  except (FileNotFoundError, UnidentifiedImageError):
+                      pass  # not an image
+
+                  return has_changed  # report result
+            </code>
+          </pre>
+            <small
+              >Simplified to only strip EXIF data.
+              <em
+                >Source:
+                <a
+                  href="https://github.com/stefmolin/exif-stripper"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  >stefmolin/exif-stripper</a
+                ></em
+              ></small
+            >
+          </div>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h2>What makes a helpful hook?</h2>
+          <ol>
+            <li class="fragment">
+              Tells you what is wrong and where the issue is (the file and,
+              potentially, line number).
+            </li>
+            <li class="fragment">
+              Fixes the file for you, if possible, or, if not, guides you to the
+              fix.
+            </li>
+          </ol>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h2>Exercise</h2>
+          <p>
+            Come up with your own check. It doesn't matter if something already
+            exists for your idea. If you can't think of anything, try creating a
+            check that enforces a file naming convention that you follow.
+          </p>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h2>Example solution</h2>
+          <p>
+            Require filenames to be at least three characters (without the
+            extension):
+          </p>
+          <pre>
+          <code data-trim class="language-python">
+            from pathlib import Path
+
+            def validate_filename(filename: str, min_len: int = 3) -> int:
+                # extract the name so that `/my/repo/x.py` becomes `x`
+                name = Path(filename).stem
+
+                # check the length
+                failure = len(name) < min_len
+
+                # convert to an exit code for later
+                return int(failure)
+          </code>
+        </pre>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
           <h2>Slide title</h2>
           <h3>Slide subtitle</h3>
           <aside class="notes">
-            <p>Speaker notes</p>
+            <!--TODO-->
           </aside>
         </section>
         <!--TODO: slides end here-->
