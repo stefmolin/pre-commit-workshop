@@ -1514,6 +1514,201 @@
           </aside>
         </section>
         <section>
+          <h2>3. Make it installable.</h2>
+          <ul>
+            <li class="fragment">Can be a package or standalone script</li>
+            <li class="fragment">Must state all dependencies</li>
+            <li class="fragment">Should create an executable</li>
+          </ul>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h3><code>pyproject.toml</code></h3>
+          <div class="r-stack" style="justify-content: start">
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="0"
+              style="margin: 0">
+              This is a template <code>pyproject.toml</code> file:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="1"
+              style="margin: 0">
+              Name your distribution (likely the name of your repository):
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="2"
+              style="margin: 0">
+              Provide a version (can also be done
+              <a
+                href="https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html#dynamic-metadata"
+                target="_blank"
+                rel="noopener noreferrer"
+                >dynamically</a
+              >):
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="3"
+              style="margin: 0">
+              Include all your dependencies here:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="4"
+              style="margin: 0">
+              Provide information about your project:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="5"
+              style="margin: 0">
+              Creating a package is recommended for testing and reuse:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="6"
+              style="margin: 0">
+              Create an executable for calling your hook's CLI:
+            </p>
+          </div>
+          <div class="center fragment" data-fragment-index="0">
+            <pre>
+            <code data-trim class="language-toml" data-line-numbers="1-28|6|7|8-9|10-21|26-28|23-24" data-fragment-index="1">
+              [build-system]
+              requires = ["setuptools", "setuptools-scm"]
+              build-backend = "setuptools.build_meta"
+
+              [project]
+              name = "example-pre-commit-hook"
+              version = "0.1.0"
+              dependencies = ["TODO"]
+              requires-python = ">=3.8"
+              authors = [{name = "Your Name", email = "Your Email"},]
+              description = "TODO"
+              readme = "README.md"
+              license = {file = "LICENSE"}
+              classifiers = [
+                  "Development Status :: 4 - Beta",
+                  "Programming Language :: Python"
+              ]
+
+              [project.urls]
+              Homepage = "https://example.com"
+              Documentation = "https://example.com/docs"
+
+              [project.scripts]
+              script-name = "your_pkg.your_module:hook_function"
+
+              # optional (if you are making a package)
+              [tool.setuptools.packages.find]
+              where = ["src"]
+            </code>
+          </pre>
+            <small
+              >Based on
+              <a
+                href="https://github.com/stefmolin/pre-commit-example"
+                rel="noopener noreferrer"
+                target="_blank"
+                >stefmolin/pre-commit-example</a
+              ></small
+            >
+          </div>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h3>Example of specifying the entry point</h3>
+          <p>
+            When the <code>exif_stripper</code> package is installed, an entry
+            point (executable) called, <code>strip-exif</code>, is created
+            automatically, which when run calls the <code>main()</code> function
+            in the <code>exif_stripper.cli</code> module:
+          </p>
+          <div class="center">
+            <pre>
+            <code data-trim class="language-toml">
+              [project.scripts]
+              strip-exif = "exif_stripper.cli:main"
+            </code>
+          </pre>
+            <small
+              ><em
+                >Source:
+                <a
+                  href="https://github.com/stefmolin/exif-stripper"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  >stefmolin/exif-stripper</a
+                ></em
+              ></small
+            >
+          </div>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h2>Exercise</h2>
+          <p>
+            Create a <code>pyproject.toml</code> for your hook from the previous
+            exercise. Feel free to start by copying the example. Be sure to
+            create an entry point that will hit the CLI. Confirm that you can
+            <code>pip install</code> it (note that you will need to create any
+            files referenced in the <code>pyproject.toml</code>, such as
+            <code>README.md</code>).
+          </p>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h2>Example solution</h2>
+          <pre>
+          <code data-trim class="language-toml">
+            [build-system]
+            requires = ["setuptools", "setuptools-scm"]
+            build-backend = "setuptools.build_meta"
+
+            [project]
+            name = "filename-validation"
+            version = "0.1.0"
+            dependencies = []
+            requires-python = ">=3.8"
+            authors = [
+              {name = "Stefanie Molin",
+               email = "contact@stefaniemolin.com"},
+            ]
+            description = "Validates that filenames meet criteria."
+            readme = "README.md"
+            license = {file = "LICENSE"}
+            classifiers = [
+                "Development Status :: 4 - Beta",
+                "Programming Language :: Python"
+            ]
+
+            [project.urls]
+            Homepage = "https://github.com/stefmolin/validate-filename"
+            Documentation = "https://stefaniemolin.com/validate-filename"
+
+            [project.scripts]
+            validate-filename = "filename_validation.cli:main"
+
+            [tool.setuptools.packages.find]
+            where = ["src"]
+          </code>
+        </pre>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
           <h2>Slide title</h2>
           <h3>Slide subtitle</h3>
           <aside class="notes">
