@@ -400,7 +400,8 @@
               class="fragment fade-in-then-out"
               data-fragment-index="0"
               style="margin: 0">
-              Defined in <code>.pre-commit-config.yaml</code>:
+              Defined in <code>.pre-commit-config.yaml</code> at the repository
+              root:
             </p>
             <p
               class="fragment fade-in-then-out"
@@ -552,7 +553,8 @@
           <h2>Third-party hooks</h2>
           <p>
             We are free to use hooks from multiple repositories. A
-            non-exhaustive list of compatible repositories can be found at
+            non-exhaustive list of popular hooks along with tips for searching
+            for compatible repositories can be found at
             <a
               href="https://pre-commit.com/hooks.html"
               target="_blank"
@@ -841,22 +843,21 @@
         <section>
           <h2>Exercise</h2>
           <p>
-            Look through the hook repositories at
+            Look at the setup information for the
+            <code>numpydoc-validation</code> hook at
             <a
-              href="https://pre-commit.com/hooks.html"
+              href="https://numpydoc.readthedocs.io/en/latest/validation.html"
               target="_blank"
               rel="noopener noreferrer"
-              >pre-commit.com/hooks.html</a
-            >
-            to find the <code>numpydoc-validation</code> one, and add it to your
-            configuration. Be sure to commit your changes.
+              >numpydoc.readthedocs.io/en/latest/validation.html</a
+            >, and add it to your configuration. Be sure to commit your changes.
           </p>
           <aside class="notes">
             <!--TODO-->
           </aside>
         </section>
         <section>
-          <h2>Solution</h2>
+          <h2>Example solution</h2>
           <p>Adding the <code>numpydoc-validation</code> hook:</p>
           <pre>
             <code data-trim class="language-yaml">
@@ -1045,7 +1046,7 @@
           </aside>
         </section>
         <section>
-          <h2>Solution</h2>
+          <h2>Example solution</h2>
           <p>
             First, specify which checks to report in the configuration file:
           </p>
@@ -1153,6 +1154,16 @@
             <li class="fragment">
               Hooks can be configured to run at different Git stages
               (<em>e.g.</em>, pre-push).
+            </li>
+            <li class="fragment">
+              Check out
+              <a
+                href="https://pre-commit.com/hooks.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                >pre-commit.com/hooks.html</a
+              >
+              for tips on finding hooks.
             </li>
           </ul>
           <aside class="notes">
@@ -1525,6 +1536,92 @@
             <li class="fragment">Must state all dependencies</li>
             <li class="fragment">Should create an executable</li>
           </ul>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h3>Package example with <code>exif-stripper</code></h3>
+          <div class="r-stack" style="justify-content: start">
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="0"
+              style="margin: 0">
+              Let's look at the file structure for a Python package:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="1"
+              style="margin: 0">
+              For this example, the repository name is
+              <code>exif-stripper</code>:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="2"
+              style="margin: 0">
+              Configuration file to have <code>pre-commit</code> run hooks on
+              our code:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="3"
+              style="margin: 0">
+              Configuration file for our new hook (for the
+              <code>strip-exif</code> hook, here):
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="4"
+              style="margin: 0">
+              Important files for any codebase:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="5"
+              style="margin: 0">
+              This package uses the src-layout:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="6"
+              style="margin: 0">
+              Tests for the logic to make this easier to maintain:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="7"
+              style="margin: 0">
+              The <code>pyproject.toml</code> file is used to install this:
+            </p>
+          </div>
+          <div class="center fragment" data-fragment-index="0">
+            <pre>
+            <code class="language-plaintext hide-line-numbers" data-trim data-line-numbers="1-12|1|2|3|4-5|7-10|11-12|6" data-fragment-index="1">
+              exif-stripper
+              ├── .pre-commit-config.yaml
+              ├── .pre-commit-hooks.yaml
+              ├── LICENSE
+              ├── README.md
+              ├── pyproject.toml
+              ├── src
+              │   └── exif_stripper
+              │       ├── __init__.py
+              │       └── cli.py
+              └── tests
+                  └── test_cli.py
+            </code>
+          </pre>
+            <small
+              >Based on
+              <a
+                href="https://github.com/stefmolin/exif-stripper"
+                rel="noopener noreferrer"
+                target="_blank"
+                >stefmolin/exif-stripper</a
+              ></small
+            >
+          </div>
           <aside class="notes">
             <!--TODO-->
           </aside>
