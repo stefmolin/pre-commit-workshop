@@ -1171,7 +1171,7 @@
           </aside>
         </section>
         <section>
-          <h2>1. Implement the check(s) in a function</h2>
+          <h2>1. Implement the check(s) in a function.</h2>
           <pre>
             <code data-trim class="language-python hide-line-numbers" data-line-numbers="1-11|3,5|6,9|7,11">
               from typing import Sequence
@@ -1310,7 +1310,7 @@
           </aside>
         </section>
         <section>
-          <h2>2. Wrap your function in a CLI</h2>
+          <h2>2. Wrap your function in a CLI.</h2>
           <div class="r-stack" style="justify-content: start">
             <p
               class="fragment fade-in-then-out"
@@ -1703,6 +1703,122 @@
             [tool.setuptools.packages.find]
             where = ["src"]
           </code>
+        </pre>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h2>4. Configure it as a hook.</h2>
+          <div class="r-stack" style="justify-content: start">
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="0"
+              style="margin: 0">
+              Configuration goes in the <code>.pre-commit-hooks.yaml</code>:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="1"
+              style="margin: 0">
+              The hook ID (we can use this to run just this hook):
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="2"
+              style="margin: 0">
+              Display name for the hook when the checks are run:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="3"
+              style="margin: 0">
+              (Optional)Description of what your hook does:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="4"
+              style="margin: 0">
+              The entry point or executable to run, which can also include
+              arguments:
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="5"
+              style="margin: 0">
+              The language your hook is written in (so
+              <code>pre-commit</code> can install it):
+            </p>
+            <p
+              class="fragment fade-in-then-out"
+              data-fragment-index="6"
+              style="margin: 0">
+              (Optional) Restrict this hook to only run on certain file types:
+            </p>
+          </div>
+          <div class="center fragment" data-fragment-index="0">
+            <pre>
+            <code data-trim class="language-yaml hide-line-numbers" data-line-numbers="1-6|1|2|3|4|5|6" data-fragment-index="1">
+              - id: strip-exif
+                name: strip-exif
+                description: This hook strips image metadata.
+                entry: strip-exif
+                language: python
+                types: [image]
+            </code>
+          </pre>
+            <small
+              ><em
+                >Source:
+                <a
+                  href="https://github.com/stefmolin/exif-stripper"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  >stefmolin/exif-stripper</a
+                ></em
+              ></small
+            >
+          </div>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h2>Exercise</h2>
+          <p>
+            Create a <code>.pre-commit-hooks.yaml</code> file for configuring
+            your hook from the previous exercise. Note that by default, hooks
+            will run in parallel, if you need to run in serial, specify
+            <code>require_serial: true</code>.
+          </p>
+          <p>
+            Listing of configuration options:
+            <a
+              href="https://pre-commit.com/#creating-new-hooks"
+              target="_blank"
+              rel="noopener noreferrer"
+              >pre-commit.com/#creating-new-hooks</a
+            >
+          </p>
+          <aside class="notes">
+            <!--TODO-->
+          </aside>
+        </section>
+        <section>
+          <h2>Example solution</h2>
+          <p>
+            Continuing the example from previous exercises, we can use the
+            following as our <code>.pre-commit-config.yaml</code> file for the
+            hook to validate the length of the filename:
+          </p>
+          <pre>
+            <code data-trim class="language-yaml">
+              - id: validate-filename
+                name: validate-filename
+                description: This hook checks filename length.
+                entry: validate-filename
+                language: python
+            </code>
         </pre>
           <aside class="notes">
             <!--TODO-->
