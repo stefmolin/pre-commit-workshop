@@ -82,10 +82,6 @@
       rel="stylesheet"
       href="https://unpkg.com/reveal.js@5.1.0/dist/theme/simple.css" />
 
-    <!--TODO: syntax highlighting in code snippets (dark theme)-->
-    <!-- <link
-      rel="stylesheet"
-      href="https://unpkg.com/reveal.js@5.1.0/plugin/highlight/monokai.css" /> -->
     <!--TODO: syntax highlighting in code snippets (light theme)-->
     <link
       rel="stylesheet"
@@ -147,12 +143,11 @@
       }
       pre > code {
         /* TODO: add this to the base presentation */
-        /* TODO: some of these should probably have a background on them */
         padding: 20px !important;
         border-radius: 10px;
       }
       pre.code-wrapper {
-        /* TODO: this too */
+        /* TODO: add this to the base presentation */
         border-radius: 10px;
       }
       :not(pre) > code {
@@ -232,7 +227,15 @@
                   >Visual Studio Code</a
                 >)
               </li>
-              <li>TODO: Clone this repository</li>
+              <li>
+                Fork and clone this repository:
+                <a
+                  href="https://github.com/stefmolin/pre-commit-workshop"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >github.com/stefmolin/pre-commit-workshop</a
+                >
+              </li>
             </ul>
           </div>
         </section>
@@ -263,7 +266,7 @@
               </li>
             </ul>
             <pre class="fragment fade-in" data-fragment-index="3">
-              <code data-trim data-highlighted="no">
+              <code data-trim class="language-plaintext">
                 .git
                 └── hooks
                     ├── commit-msg.sample
@@ -274,10 +277,6 @@
               </code>
             </pre>
           </div>
-          <aside class="notes">
-            <p>Let's start by talking about Git hooks.</p>
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h2>Pre-commit hooks</h2>
@@ -301,9 +300,6 @@
               </li>
             </ul>
           </div>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h2>How to enable</h2>
@@ -319,9 +315,6 @@
               </li>
             </ol>
           </div>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h2>Pre-commit hooks != <code>pre-commit</code></h2>
@@ -346,9 +339,6 @@
               </li>
             </ul>
           </div>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h2>Setup</h2>
@@ -378,9 +368,6 @@
               </li>
             </ol>
           </div>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h3>Package installation</h3>
@@ -389,9 +376,6 @@
               $ python3 -m pip install pre-commit
             </code>
           </pre>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h3>Basic configuration</h3>
@@ -460,9 +444,6 @@
               ></small
             >
           </div>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h3>Git hook installation</h3>
@@ -476,13 +457,7 @@
               pre-commit installed at .git/hooks/pre-commit
             </code>
           </pre>
-          <aside class="notes">
-            <!--TODO: maybe this slide is a good place to mention that all contributors need to do this-->
-            <p>
-              When we run this command, <code>pre-commit</code> installs an
-              executable at <code>.git/hooks/pre-commit</code>:
-            </p>
-          </aside>
+          <!--TODO: maybe this slide is a good place to mention that all contributors need to do this-->
         </section>
         <section>
           <h3>Add the configuration to version control</h3>
@@ -501,9 +476,6 @@
               trim trailing whitespace................................Passed
             </code>
           </pre>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h2>Exercise</h2>
@@ -521,9 +493,6 @@
               >github.com/pre-commit/pre-commit-hooks</a
             >
           </p>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h2>Example solution</h2>
@@ -545,9 +514,6 @@
                      - id: trailing-whitespace
             </code>
           </pre>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h2>Third-party hooks</h2>
@@ -593,9 +559,6 @@
               >
             </div>
           </div>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h3>Adding <code>ruff</code></h3>
@@ -652,9 +615,6 @@
             </code>
           </pre>
           </div>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h3>Commit your changes</h3>
@@ -704,9 +664,6 @@
           </pre>
           </div>
           <!--TODO: does this happen for the initial set? maybe include that-->
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h3>Testing the <code>ruff</code> pre-commit hooks</h3>
@@ -723,9 +680,6 @@
                   pass
             </code>
           </pre>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h3>The commit fails</h3>
@@ -794,9 +748,6 @@
             </code>
           </pre>
           </div>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h3>Verify the changes before trying again</h3>
@@ -815,9 +766,6 @@
                     pass
               </code>
             </pre>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h3>The commit succeeds now</h3>
@@ -836,9 +784,6 @@
                create mode 100644 example.py
             </code>
           </pre>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h2>Exercise</h2>
@@ -852,9 +797,6 @@
               >numpydoc.readthedocs.io/en/latest/validation.html</a
             >, and add it to your configuration. Be sure to commit your changes.
           </p>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h2>Example solution</h2>
@@ -867,10 +809,6 @@
                   - id: numpydoc-validation
             </code>
           </pre>
-
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h2>Running hooks on demand</h2>
@@ -903,9 +841,6 @@
             </code>
           </pre>
           </div>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h2>Validating docstrings</h2>
@@ -956,9 +891,6 @@
           </pre>
             <small><em>Output abbreviated.</em></small>
           </div>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h2>Modifying hook behavior</h2>
@@ -967,9 +899,6 @@
             <li>via command line arguments</li>
             <li>via a configuration file</li>
           </ul>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h3>Modifying hook behavior with command line arguments</h3>
@@ -989,9 +918,6 @@
                   - id: ruff-format
             </code>
           </pre>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h3>Modifying hook behavior with a configuration file</h3>
@@ -1022,9 +948,6 @@
               quote-style = "single"
             </code>
           </pre>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h2>Exercise</h2>
@@ -1041,9 +964,6 @@
               >numpydoc.readthedocs.io/en/latest/validation.html</a
             >
           </p>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h2>Example solution</h2>
@@ -1063,9 +983,6 @@
               ]
             </code>
           </pre>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <p>Then, update the docstrings in <code>example.py</code>:</p>
@@ -1085,9 +1002,6 @@
                   pass
             </code>
           </pre>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h2>Excluding files</h2>
@@ -1118,9 +1032,6 @@
               for all supported options.
             </em>
           </p>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h2>Keeping hooks up-to-date</h2>
@@ -1140,9 +1051,6 @@
             <b>Warning:</b> Make sure these new versions work with your setup by
             running <code>pre-commit run --all-files</code>.
           </p>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h2>Good to know</h2>
@@ -1166,9 +1074,6 @@
               for tips on finding hooks.
             </li>
           </ul>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
 
         <section>
@@ -1182,9 +1087,6 @@
             <li class="fragment">Make it installable.</li>
             <li class="fragment">Configure it as a hook.</li>
           </ol>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h2>1. Implement the check(s) in a function.</h2>
@@ -1203,9 +1105,6 @@
                   return 1 if failure else 0
             </code>
           </pre>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h3>Toy example</h3>
@@ -1225,9 +1124,6 @@
                   return 1 if failure else 0
             </code>
           </pre>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h3>Simplified example from <code>exif-stripper</code></h3>
@@ -1268,9 +1164,6 @@
               ></small
             >
           </div>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h2>What makes a helpful hook?</h2>
@@ -1284,9 +1177,6 @@
               fix.
             </li>
           </ol>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h2>Exercise</h2>
@@ -1295,9 +1185,6 @@
             exists for your idea. If you can't think of anything, try creating a
             check that enforces a file naming convention that you follow.
           </p>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h2>Example solution</h2>
@@ -1321,9 +1208,6 @@
                 return int(failure)
           </code>
         </pre>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h2>2. Wrap your function in a CLI.</h2>
@@ -1380,9 +1264,6 @@
             </code>
           </pre>
           </div>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h3>Simplified example from <code>exif-stripper</code></h3>
@@ -1449,9 +1330,6 @@
               ></small
             >
           </div>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h2>Exercise</h2>
@@ -1460,9 +1338,6 @@
             exercise. Add an optional command line argument to modify how your
             check behaves.
           </p>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h2>Example solution</h2>
@@ -1525,9 +1400,6 @@
           </code>
         </pre>
           </div>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h2>3. Make it installable.</h2>
@@ -1536,9 +1408,6 @@
             <li class="fragment">Must state all dependencies</li>
             <li class="fragment">Should create an executable</li>
           </ul>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h3>Package example with <code>exif-stripper</code></h3>
@@ -1622,9 +1491,6 @@
               ></small
             >
           </div>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h3><code>pyproject.toml</code></h3>
@@ -1721,9 +1587,6 @@
               ></small
             >
           </div>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h3>Example of specifying the entry point</h3>
@@ -1752,9 +1615,6 @@
               ></small
             >
           </div>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h2>Exercise</h2>
@@ -1766,9 +1626,6 @@
             files referenced in the <code>pyproject.toml</code>, such as
             <code>README.md</code>).
           </p>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h2>Example solution</h2>
@@ -1806,9 +1663,6 @@
             where = ["src"]
           </code>
         </pre>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h2>4. Configure it as a hook.</h2>
@@ -1882,9 +1736,6 @@
               ></small
             >
           </div>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h2>Exercise</h2>
@@ -1903,9 +1754,6 @@
               >pre-commit.com/#creating-new-hooks</a
             >
           </p>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h2>Example solution</h2>
@@ -1923,9 +1771,6 @@
                 language: python
             </code>
         </pre>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
         </section>
         <section>
           <h2>Slide title</h2>
@@ -2003,7 +1848,6 @@
     </div>
 
     <script src="https://unpkg.com/reveal.js@5.1.0/dist/reveal.js"></script>
-    <script src="https://unpkg.com/reveal.js@5.1.0/plugin/notes/notes.js"></script>
 
     <!--syntax highlighting in code snippets-->
     <script src="https://unpkg.com/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
@@ -2017,7 +1861,7 @@
         slideNumber: true, // TODO - remove this later
 
         // Learn about plugins: https://revealjs.com/plugins/
-        plugins: [RevealHighlight, RevealNotes],
+        plugins: [RevealHighlight],
       });
     </script>
   </body>
