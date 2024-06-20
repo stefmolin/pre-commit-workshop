@@ -39,7 +39,7 @@ jobs:
         run: |
           mkdir -p slides/${{ secrets.SLIDES_DIR }}/images && \
             cp index.html slides/${{ secrets.SLIDES_DIR }}/ && \
-            && cp images/* slides/${{ secrets.SLIDES_DIR }}/images/;
+            cp images/* slides/${{ secrets.SLIDES_DIR }}/images/;
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
