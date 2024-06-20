@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <!-- Google tag (gtag.js) -->
     <script
       async
-      src="https://www.googletagmanager.com/gtag/js?id=G-25389D1SR4"></script>
+      src="https://www.googletagmanager.com/gtag/js?id=G-25389D1SR4"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -18,7 +19,8 @@
     <meta charset="utf-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
     <meta name="robots" content="index,follow" />
     <meta name="keywords" content="technology, open source, slides, Python" />
@@ -33,10 +35,12 @@
     <meta name="referrer" content="origin" />
     <meta
       property="og:url"
-      content="https://stefaniemolin.com/pre-commit-workshop/" />
+      content="https://stefaniemolin.com/pre-commit-workshop/"
+    />
     <meta
       property="og:title"
-      content="(Pre-)Commit to Better Code | Stefanie Molin" />
+      content="(Pre-)Commit to Better Code | Stefanie Molin"
+    />
     <meta name="description" content="TODO" />
     <meta property="og:description" content="TODO" />
     <meta property="og:image" content="TODO: social media preview image" />
@@ -50,49 +54,59 @@
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="/favicon/apple-touch-icon.png" />
+      href="/favicon/apple-touch-icon.png"
+    />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="/favicon/favicon-32x32.png" />
+      href="/favicon/favicon-32x32.png"
+    />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="/favicon/favicon-16x16.png" />
+      href="/favicon/favicon-16x16.png"
+    />
     <link
       rel="icon"
       type="image/png"
       sizes="192x192"
-      href="/favicon/android-chrome-192x192.png" />
+      href="/favicon/android-chrome-192x192.png"
+    />
     <link
       rel="icon"
       type="image/png"
       sizes="512x512"
-      href="/favicon/android-chrome-512x512.png" />
+      href="/favicon/android-chrome-512x512.png"
+    />
 
     <link
       rel="stylesheet"
-      href="https://unpkg.com/reveal.js@5.1.0/dist/reset.css" />
+      href="https://unpkg.com/reveal.js@5.1.0/dist/reset.css"
+    />
     <link
       rel="stylesheet"
-      href="https://unpkg.com/reveal.js@5.1.0/dist/reveal.css" />
+      href="https://unpkg.com/reveal.js@5.1.0/dist/reveal.css"
+    />
     <link
       rel="stylesheet"
-      href="https://unpkg.com/reveal.js@5.1.0/dist/theme/simple.css" />
+      href="https://unpkg.com/reveal.js@5.1.0/dist/theme/simple.css"
+    />
 
     <!--TODO: syntax highlighting in code snippets (light theme)-->
     <link
       rel="stylesheet"
-      href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/stackoverflow-light.min.css" />
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/stackoverflow-light.min.css"
+    />
     <!--TODO: add all the jQuery stuff for the timers, etc. (may not need them all with this version of Reveal.js)-->
 
     <!-- Font Awesome icons -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.1/css/all.min.css"
       rel="stylesheet"
-      type="text/css" />
+      type="text/css"
+    />
 
     <style type="text/css">
       :root {
@@ -168,7 +182,8 @@
           href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
           style="z-index: 1"
           target="_blank"
-          rel="noopener noreferrer">
+          rel="noopener noreferrer"
+        >
           CC BY-NC-SA 4.0
         </a>
       </div>
@@ -346,24 +361,28 @@
             <ol>
               <li
                 class="fragment fade-in-then-semi-out"
-                data-fragment-index="1">
+                data-fragment-index="1"
+              >
                 Install the <code>pre-commit</code> package in your repository.
               </li>
               <li
                 class="fragment fade-in-then-semi-out"
-                data-fragment-index="2">
+                data-fragment-index="2"
+              >
                 Define the checks you want to use in a file called
                 <code>.pre-commit-config.yaml</code>.
               </li>
               <li
                 class="fragment fade-in-then-semi-out"
-                data-fragment-index="3">
+                data-fragment-index="3"
+              >
                 Have <code>pre-commit</code> install itself as your pre-commit
                 hook.
               </li>
               <li
                 class="fragment fade-in-then-semi-out"
-                data-fragment-index="4">
+                data-fragment-index="4"
+              >
                 Work on your code as usual.
               </li>
             </ol>
@@ -383,38 +402,44 @@
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="0"
-              style="margin: 0">
+              style="margin: 0"
+            >
               Defined in <code>.pre-commit-config.yaml</code> at the repository
               root:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="1"
-              style="margin: 0">
+              style="margin: 0"
+            >
               The <code>repos</code> section lists the repositories to use:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="2"
-              style="margin: 0">
+              style="margin: 0"
+            >
               This represents the configuration for a single repository:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="3"
-              style="margin: 0">
+              style="margin: 0"
+            >
               The URL of the repository to clone:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="4"
-              style="margin: 0">
+              style="margin: 0"
+            >
               The tag or commit hash to clone at:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="5"
-              style="margin: 0">
+              style="margin: 0"
+            >
               The hooks to run from that repository:
             </p>
           </div>
@@ -566,31 +591,36 @@
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="0"
-              style="margin: 0">
+              style="margin: 0"
+            >
               Create a new entry under the <code>repos</code> key:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="1"
-              style="margin: 0">
+              style="margin: 0"
+            >
               The <code>ruff</code> pre-commit hook is in a separate repository:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="2"
-              style="margin: 0">
+              style="margin: 0"
+            >
               The tag or commit hash to clone at:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="3"
-              style="margin: 0">
+              style="margin: 0"
+            >
               The hooks to run from that repository:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="4"
-              style="margin: 0">
+              style="margin: 0"
+            >
               Use <code>args</code> to pass command line arguments to the hook:
             </p>
           </div>
@@ -622,27 +652,31 @@
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="0"
-              style="margin: 0">
+              style="margin: 0"
+            >
               This will trigger an update to the environment used for the
               checks:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="1"
-              style="margin: 0">
+              style="margin: 0"
+            >
               All new or modified hooks need to be updated in the environment:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="2"
-              style="margin: 0">
+              style="margin: 0"
+            >
               This will be slower the first time, but persists until
               modification:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="3"
-              style="margin: 0">
+              style="margin: 0"
+            >
               Hook order in the configuration file matters:
             </p>
           </div>
@@ -687,38 +721,44 @@
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="0"
-              style="margin: 0">
+              style="margin: 0"
+            >
               No TOML or YAML files to check:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="1"
-              style="margin: 0">
+              style="margin: 0"
+            >
               No issues with these checks:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="2"
-              style="margin: 0">
+              style="margin: 0"
+            >
               <code>ruff</code> modified a file, which is an automatic failure:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="3"
-              style="margin: 0">
+              style="margin: 0"
+            >
               <code>ruff</code> found an unused import when linting:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="4"
-              style="margin: 0">
+              style="margin: 0"
+            >
               <code>ruff</code> summarizes its findings (sometimes we have to
               fix it):
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="5"
-              style="margin: 0">
+              style="margin: 0"
+            >
               <code>ruff</code> also made a change while formatting the file:
             </p>
           </div>
@@ -816,19 +856,22 @@
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="0"
-              style="margin: 0">
+              style="margin: 0"
+            >
               Run all hooks on staged changes:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="1"
-              style="margin: 0">
+              style="margin: 0"
+            >
               Run all hooks on <code>example.py</code>:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="2"
-              style="margin: 0">
+              style="margin: 0"
+            >
               Run only the <code>numpydoc-validation</code> hook on all files:
             </p>
           </div>
@@ -848,20 +891,23 @@
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="0"
-              style="margin: 0">
+              style="margin: 0"
+            >
               Run <code>numpydoc-validation</code> hook on
               <code>example.py</code>:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="1"
-              style="margin: 0">
+              style="margin: 0"
+            >
               <code>example.py</code> fails the docstring checks:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="2"
-              style="margin: 0">
+              style="margin: 0"
+            >
               Without any additional configuration, all numpydoc checks are run:
             </p>
           </div>
@@ -1215,31 +1261,36 @@
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="0"
-              style="margin: 0">
+              style="margin: 0"
+            >
               We will use <code>argparse</code> for this example:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="1"
-              style="margin: 0">
+              style="margin: 0"
+            >
               At a minimum, we need to accept filenames:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="2"
-              style="margin: 0">
+              style="margin: 0"
+            >
               We can then parse the received arguments:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="3"
-              style="margin: 0">
+              style="margin: 0"
+            >
               Run your check(s) on each item in <code>args.filenames</code>:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="4"
-              style="margin: 0">
+              style="margin: 0"
+            >
               Return 1 if there were any failures, 0 otherwise:
             </p>
           </div>
@@ -1271,26 +1322,30 @@
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="0"
-              style="margin: 0">
+              style="margin: 0"
+            >
               Create the <code>ArgumentParser</code>:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="1"
-              style="margin: 0">
+              style="margin: 0"
+            >
               Parse the received arguments:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="2"
-              style="margin: 0">
+              style="margin: 0"
+            >
               Process each file, storing the outcomes (these are Boolean
               values):
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="3"
-              style="margin: 0">
+              style="margin: 0"
+            >
               Aggregate the results, returning 1 if there were any failures, 0
               otherwise:
             </p>
@@ -1345,26 +1400,30 @@
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="0"
-              style="margin: 0">
+              style="margin: 0"
+            >
               Here, we continue with the hook requiring filenames of a certain
               length:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="1"
-              style="margin: 0">
+              style="margin: 0"
+            >
               Most of this is identical to the example:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="2"
-              style="margin: 0">
+              style="margin: 0"
+            >
               But, this time we add the minimum length as an optional argument:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="3"
-              style="margin: 0">
+              style="margin: 0"
+            >
               When we run the checks on each file, we also pass it in:
             </p>
           </div>
@@ -1415,52 +1474,60 @@
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="0"
-              style="margin: 0">
+              style="margin: 0"
+            >
               Let's look at the file structure for a Python package:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="1"
-              style="margin: 0">
+              style="margin: 0"
+            >
               For this example, the repository name is
               <code>exif-stripper</code>:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="2"
-              style="margin: 0">
+              style="margin: 0"
+            >
               Configuration file to have <code>pre-commit</code> run hooks on
               our code:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="3"
-              style="margin: 0">
+              style="margin: 0"
+            >
               Configuration file for our new hook (for the
               <code>strip-exif</code> hook, here):
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="4"
-              style="margin: 0">
+              style="margin: 0"
+            >
               Important files for any codebase:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="5"
-              style="margin: 0">
+              style="margin: 0"
+            >
               This package uses the src-layout:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="6"
-              style="margin: 0">
+              style="margin: 0"
+            >
               Tests for the logic to make this easier to maintain:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="7"
-              style="margin: 0">
+              style="margin: 0"
+            >
               The <code>pyproject.toml</code> file is used to install this:
             </p>
           </div>
@@ -1498,19 +1565,22 @@
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="0"
-              style="margin: 0">
+              style="margin: 0"
+            >
               This is a template <code>pyproject.toml</code> file:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="1"
-              style="margin: 0">
+              style="margin: 0"
+            >
               Name your distribution (likely the name of your repository):
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="2"
-              style="margin: 0">
+              style="margin: 0"
+            >
               Provide a version (can also be done
               <a
                 href="https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html#dynamic-metadata"
@@ -1522,25 +1592,29 @@
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="3"
-              style="margin: 0">
+              style="margin: 0"
+            >
               Include all your dependencies here:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="4"
-              style="margin: 0">
+              style="margin: 0"
+            >
               Provide information about your project:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="5"
-              style="margin: 0">
+              style="margin: 0"
+            >
               Creating a package is recommended for testing and reuse:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="6"
-              style="margin: 0">
+              style="margin: 0"
+            >
               Create an executable for calling your hook's CLI:
             </p>
           </div>
@@ -1670,46 +1744,53 @@
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="0"
-              style="margin: 0">
+              style="margin: 0"
+            >
               Configuration goes in
               <code>.pre-commit-hooks.yaml</code> as a list of hooks:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="1"
-              style="margin: 0">
+              style="margin: 0"
+            >
               The hook ID (we can use this to run just this hook):
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="2"
-              style="margin: 0">
+              style="margin: 0"
+            >
               Display name for the hook when the checks are run:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="3"
-              style="margin: 0">
+              style="margin: 0"
+            >
               (Optional)Description of what your hook does:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="4"
-              style="margin: 0">
+              style="margin: 0"
+            >
               The entry point or executable to run, which can also include
               arguments:
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="5"
-              style="margin: 0">
+              style="margin: 0"
+            >
               The language your hook is written in (so
               <code>pre-commit</code> can install it):
             </p>
             <p
               class="fragment fade-in-then-out"
               data-fragment-index="6"
-              style="margin: 0">
+              style="margin: 0"
+            >
               (Optional) Restrict this hook to only run on certain file types:
             </p>
           </div>
@@ -1773,11 +1854,48 @@
         </pre>
         </section>
         <section>
-          <h2>Slide title</h2>
-          <h3>Slide subtitle</h3>
-          <aside class="notes">
-            <!--TODO-->
-          </aside>
+          <h2>Document your hook</h2>
+          <p>
+            Make it easy for people to get started with your hook by including a
+            setup snippet in your <code>README</code>. If you have command line
+            arguments and/or support configuration files, mention some common
+            configurations.
+          </p>
+          <div class="center">
+            <img
+              src="images/example-setup-snippet.png"
+              alt="Example setup snippet from exif-stripper"
+              style="margin-bottom: -10px"
+            />
+            <small
+              ><em
+                >Source:
+                <a
+                  href="https://github.com/stefmolin/exif-stripper"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  >stefmolin/exif-stripper</a
+                ></em
+              ></small
+            >
+          </div>
+        </section>
+        <section>
+          <h2>Sharing your hook with the world</h2>
+          <ul>
+            <li class="fragment">
+              Once your repository is public on GitHub (or similar), your hook
+              is available for use.
+            </li>
+            <li class="fragment">
+              Help users find your hook by talking about it: conference talks,
+              blog posts, tweets, <em>etc.</em>
+            </li>
+            <li class="fragment">
+              Consider publishing it to PyPI if it is useful beyond just being a
+              hook.
+            </li>
+          </ul>
         </section>
         <!--TODO: slides end here-->
         <section id="thank-you">
@@ -1793,17 +1911,20 @@
               display: flex;
               justify-content: space-evenly;
               align-items: center;
-            ">
+            "
+          >
             <div style="text-align: center; width: 30%">
               <img
                 class="qr-code"
-                src="https://raw.githubusercontent.com/stefmolin/pandas-workshop/main/media/qr-code.png" />
+                src="https://raw.githubusercontent.com/stefmolin/pandas-workshop/main/media/qr-code.png"
+              />
             </div>
             <div style="font-size: 0.85em">
               <div style="display: flex">
                 <i
                   class="fa fa-globe fa-fw"
-                  style="padding-right: 4px; margin: auto 0"></i>
+                  style="padding-right: 4px; margin: auto 0"
+                ></i>
                 <a href="https://stefaniemolin.com" rel="noopener noreferrer">
                   stefaniemolin.com
                 </a>
@@ -1811,33 +1932,39 @@
               <div style="display: flex">
                 <i
                   class="fab fa-github fa-fw"
-                  style="padding-right: 4px; margin: auto 0"></i>
+                  style="padding-right: 4px; margin: auto 0"
+                ></i>
                 <a
                   href="https://github.com/stefmolin"
                   rel="noopener noreferrer"
-                  target="_blank">
+                  target="_blank"
+                >
                   github.com/stefmolin
                 </a>
               </div>
               <div style="display: flex">
                 <i
                   class="fab fa-twitter fa-fw"
-                  style="padding-right: 4px; margin: auto 0"></i>
+                  style="padding-right: 4px; margin: auto 0"
+                ></i>
                 <a
                   href="https://twitter.com/StefanieMolin"
                   rel="noopener noreferrer"
-                  target="_blank">
+                  target="_blank"
+                >
                   twitter.com/StefanieMolin
                 </a>
               </div>
               <div style="display: flex">
                 <i
                   class="fab fa-linkedin fa-fw"
-                  style="padding-right: 4px; margin: auto 0"></i>
+                  style="padding-right: 4px; margin: auto 0"
+                ></i>
                 <a
                   href="https://linkedin.com/in/stefanie-molin"
                   rel="noopener noreferrer"
-                  target="_blank">
+                  target="_blank"
+                >
                   linkedin.com/in/stefanie-molin
                 </a>
               </div>
