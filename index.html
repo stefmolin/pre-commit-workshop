@@ -1948,6 +1948,49 @@
             </li>
           </ul>
         </section>
+        <section>
+          <h2>Good to know</h2>
+          <ul>
+            <li class="fragment">
+              Adjust your hook's behavior by supporting command line arguments
+              or reading settings from a configuration file like
+              <code>pyproject.toml</code>.
+            </li>
+            <li class="fragment">
+              Multiple hooks can be defined in a single repository.
+            </li>
+            <li class="fragment">
+              Hooks can run at different stages of the Git workflow (not just
+              the pre-commit stage):
+              <a
+                href="https://pre-commit.com/#confining-hooks-to-run-at-certain-stages"
+                target="_blank"
+                rel="noopener noreferrer"
+                >pre-commit.com/#confining-hooks-to-run-at-certain-stages</a
+              >.
+            </li>
+            <li class="fragment">
+              Hooks can be written in any language supported by
+              <code>pre-commit</code> (see the list at
+              <a
+                href="https://pre-commit.com/#supported-languages"
+                target="_blank"
+                rel="noopener noreferrer"
+                >pre-commit.com/#supported-languages</a
+              >).
+            </li>
+            <li class="fragment">
+              Use <code>pre-commit run --all-files</code> to run your hooks in
+              CI/CD workflows (or you can use
+              <a
+                href="https://pre-commit.ci/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >pre-commit.ci</a
+              >).
+            </li>
+          </ul>
+        </section>
         <section id="references">
           <h2>References</h2>
           <ul>
