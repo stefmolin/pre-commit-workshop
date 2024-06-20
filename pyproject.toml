@@ -1,0 +1,15 @@
+[project]
+name = "pre-commit-workshop"
+version = "0.1.0"
+dependencies = [
+    "pre-commit",
+]
+description = "(Pre-)Commit to Better Code workshop."
+readme = "README.md"
+license = { file = "LICENSE" }
+maintainers = [
+  { name = "Stefanie Molin" },
+]
+authors = [
+  { name = "Stefanie Molin", email = "24376333+stefmolin@users.noreply.github.com" },
+]
