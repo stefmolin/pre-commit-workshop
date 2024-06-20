@@ -1,4 +1,5 @@
 # Pre-Commit Workshop
+
 [![View slides in browser](https://img.shields.io/badge/view-slides-orange?logo=reveal.js&logoColor=white)](https://stefaniemolin.com/pre-commit-workshop/) [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
 This work is licensed under a
@@ -8,7 +9,7 @@ This work is licensed under a
 
 Maintaining code quality can be challenging, no matter the size of your project or number of contributors. Different team members may have different opinions on code styling and preferences for code structure, while solo contributors might find themselves spending a considerable amount of time making sure the code conforms to accepted conventions. However, manually inspecting and fixing issues in files is both tedious and error-prone. As such, computers are much more suited to this task than humans. Pre-commit hooks are a great way to have a computer handle this for you.
 
-Pre-commit hooks are code checks that run whenever you attempt to commit your changes with `git`. They can detect and, in some cases, automatically correct code-quality issues *before* they make it to your code base. In this tutorial, you will learn how to install and configure pre-commit hooks for your repository to ensure that only code that passes your checks makes it into your code base. We will also explore how to build custom pre-commit hooks for novel use cases.
+Pre-commit hooks are code checks that run whenever you attempt to commit your changes with `git`. They can detect and, in some cases, automatically correct code-quality issues _before_ they make it to your code base. In this tutorial, you will learn how to install and configure pre-commit hooks for your repository to ensure that only code that passes your checks makes it into your code base. We will also explore how to build custom pre-commit hooks for novel use cases.
 
 ## About the Author
 
