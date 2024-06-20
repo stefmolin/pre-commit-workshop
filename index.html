@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Google tag (gtag.js) -->
@@ -1852,6 +1852,57 @@
                 language: python
             </code>
         </pre>
+        </section>
+        <section>
+          <h2>Testing the hook configuration</h2>
+          <p>
+            The best way to test that your hook is working correctly is from
+            another repository:
+          </p>
+          <ul>
+            <li class="fragment">
+              Run <code>pre-commit try-repo</code> from another repository
+              without committing. (<a
+                href="https://pre-commit.com/#developing-hooks-interactively"
+                target="_blank"
+                rel="noopener noreferrer"
+                >pre-commit.com/#developing-hooks-interactively</a
+              >)
+            </li>
+            <li class="fragment">
+              Add your new hook to the
+              <code>.pre-commit-config.yaml</code> file in another repository,
+              and set the <code>rev</code> value to the most recent commit hash.
+              Then, you can run your hook with <code>pre-commit run</code>.
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Exercise</h2>
+          <p>Test that your hook is properly configured.</p>
+        </section>
+        <section>
+          <h2>Maintaining your hook</h2>
+          <p class="fragment">
+            There are several points of failure when building and maintaining a
+            hook, so it is best to set up testing in layers:
+          </p>
+          <ul>
+            <li class="fragment">
+              Build a test suite that exercises the underlying logic and the
+              CLI.
+            </li>
+            <li class="fragment">
+              Run your test suite on different operating systems and Python
+              versions.
+            </li>
+          </ul>
+          <p class="fragment">
+            <em
+              >Tip: See the <a href="#references">references slide</a> at the
+              end for some examples.</em
+            >
+          </p>
         </section>
         <section>
           <h2>Document your hook</h2>
