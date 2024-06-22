@@ -94,7 +94,7 @@
       href="https://unpkg.com/reveal.js@5.1.0/dist/theme/simple.css"
     />
 
-    <!--TODO: syntax highlighting in code snippets (light theme)-->
+    <!--syntax highlighting in code snippets (light theme)-->
     <link
       rel="stylesheet"
       href="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/styles/stackoverflow-light.min.css"
@@ -156,12 +156,10 @@
         font-size: 0.25em;
       }
       pre > code {
-        /* TODO: add this to the base presentation */
         padding: 20px !important;
         border-radius: 10px;
       }
       pre.code-wrapper {
-        /* TODO: add this to the base presentation */
         border-radius: 10px;
       }
       :not(pre) > code {
@@ -479,9 +477,12 @@
             in this repository) are valid YAML. Try committing it:
           </p>
           <pre>
-            <code data-trim class="language-shell hide-line-numbers" data-line-numbers="1-2|3-7">
+            <code data-trim class="language-shell hide-line-numbers" data-line-numbers="1-2|3-5|6-10">
               $ git add .pre-commit-config.yaml
               $ git commit -m "Add pre-commit config"
+              [INFO] Installing environment for [...]/pre-commit-hooks.
+              [INFO] Once installed this environment will be reused.
+              [INFO] This may take a few minutes...
               check toml..........................(no files to check)Skipped
               check yaml..............................................Passed
               fix end of files........................................Passed
@@ -617,18 +618,20 @@
           <h3>Commit your changes</h3>
           <div class="r-stack r-stack-left">
             <p class="fragment fade-in-then-out" data-fragment-index="0">
-              This will trigger an update to the environment used for the
-              checks:
+              This once again triggers an update to the environment used for
+              running the checks:
             </p>
             <p class="fragment fade-in-then-out" data-fragment-index="1">
-              All new or modified hooks need to be updated in the environment:
+              All hooks that were added or modified hooks need to be updated in
+              the environment:
             </p>
             <p class="fragment fade-in-then-out" data-fragment-index="2">
-              This will be slower the first time, but persists until
-              modification:
+              This will be slower the first time, but the environment persists
+              until modification:
             </p>
             <p class="fragment fade-in-then-out" data-fragment-index="3">
-              Hook order in the configuration file matters:
+              Hook order in the configuration file matters &ndash; hooks run in
+              the order you specify and may make conflicting changes:
             </p>
           </div>
           <div class="center fragment" data-fragment-index="0">
@@ -648,7 +651,6 @@
             </code>
           </pre>
           </div>
-          <!--TODO: does this "installing environment" happen for the initial set? maybe include that-->
         </section>
         <section id="testing-the-ruff-pre-commit-hooks">
           <h3>Testing the <code>ruff</code> pre-commit hooks</h3>
