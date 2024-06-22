@@ -267,10 +267,10 @@
             <li>Creating a Pre-Commit Hook</li>
           </ol>
         </section>
-        <section>
+        <section id="setting-up-pre-commit-hooks">
           <h1 class="center">Setting Up Pre-Commit Hooks</h1>
         </section>
-        <section>
+        <section id="git-hooks-overview">
           <h2>Overview of Git hooks</h2>
           <div>
             <ul>
@@ -299,8 +299,8 @@
             </pre>
           </div>
         </section>
-        <section>
-          <h2>Pre-commit hooks</h2>
+        <section id="pre-commit-hooks-overview">
+          <h2>Overview of pre-commit hooks</h2>
           <div>
             <ul>
               <li class="fragment fade-in" data-fragment-index="1">
@@ -322,8 +322,8 @@
             </ul>
           </div>
         </section>
-        <section>
-          <h2>How to enable</h2>
+        <section id="how-to-enable-pre-commit-hooks">
+          <h2>How to enable pre-commit hooks</h2>
           <div>
             <ol>
               <li class="fragment fade-in" data-fragment-index="1">
@@ -337,7 +337,7 @@
             </ol>
           </div>
         </section>
-        <section>
+        <section id="disambiguation">
           <h2>Pre-commit hooks != <code>pre-commit</code></h2>
           <div>
             <ul>
@@ -361,7 +361,7 @@
             </ul>
           </div>
         </section>
-        <section>
+        <section id="pre-commit-setup">
           <h2>Setup</h2>
           <div>
             <ol>
@@ -394,7 +394,7 @@
             </ol>
           </div>
         </section>
-        <section>
+        <section id="pre-commit-package-installation">
           <h3>Package installation</h3>
           <pre>
             <code data-trim class="language-shell">
@@ -402,7 +402,7 @@
             </code>
           </pre>
         </section>
-        <section>
+        <section id="basic-configuration">
           <h3>Basic configuration</h3>
           <div class="r-stack" style="justify-content: start">
             <p
@@ -476,7 +476,7 @@
             >
           </div>
         </section>
-        <section>
+        <section id="git-hook-installation">
           <h3>Git hook installation</h3>
           <p>
             While the <code>.pre-commit-config.yaml</code> file lives in version
@@ -489,7 +489,7 @@
             </code>
           </pre>
         </section>
-        <section>
+        <section id="committing-the-configuration-file">
           <h3>Add the configuration to version control</h3>
           <p>
             The <code>check-yaml</code> hook we included will make sure that the
@@ -507,7 +507,7 @@
             </code>
           </pre>
         </section>
-        <section>
+        <section id="exercise-1-1">
           <h2>Exercise</h2>
           <p>
             There are more hooks provided by the repository that we are
@@ -524,7 +524,7 @@
             >
           </p>
         </section>
-        <section>
+        <section id="example-solution-1-1">
           <h2>Example solution</h2>
           <p>
             Adding these two hooks ensures that your scripts are actually
@@ -545,7 +545,7 @@
             </code>
           </pre>
         </section>
-        <section>
+        <section id="third-party-hooks">
           <h2>Third-party hooks</h2>
           <p>
             We are free to use hooks from multiple repositories. A
@@ -590,7 +590,7 @@
             </div>
           </div>
         </section>
-        <section>
+        <section id="adding-ruff">
           <h3>Adding <code>ruff</code></h3>
           <div class="r-stack" style="justify-content: start">
             <p
@@ -651,7 +651,7 @@
           </pre>
           </div>
         </section>
-        <section>
+        <section id="committing-after-changing-the-configuration">
           <h3>Commit your changes</h3>
           <div class="r-stack" style="justify-content: start">
             <p
@@ -702,9 +702,9 @@
             </code>
           </pre>
           </div>
-          <!--TODO: does this happen for the initial set? maybe include that-->
+          <!--TODO: does this "installing environment" happen for the initial set? maybe include that-->
         </section>
-        <section>
+        <section id="testing-the-ruff-pre-commit-hooks">
           <h3>Testing the <code>ruff</code> pre-commit hooks</h3>
           <p>
             Create a new file called <code>example.py</code> with the following
@@ -720,7 +720,7 @@
             </code>
           </pre>
         </section>
-        <section>
+        <section id="failing-checks">
           <h3>The commit fails</h3>
           <div class="r-stack" style="justify-content: start">
             <p
@@ -794,7 +794,7 @@
           </pre>
           </div>
         </section>
-        <section>
+        <section id="verify-changes-made-by-hooks">
           <h3>Verify the changes before trying again</h3>
           <pre>
               <code data-trim class="language-diff">
@@ -812,7 +812,7 @@
               </code>
             </pre>
         </section>
-        <section>
+        <section id="checks-passing">
           <h3>The commit succeeds now</h3>
           <pre>
             <code data-trim class="language-shell hide-line-numbers" data-line-numbers="1-2,9-11">
@@ -830,7 +830,7 @@
             </code>
           </pre>
         </section>
-        <section>
+        <section id="exercise-1-2">
           <h2>Exercise</h2>
           <p>
             Look at the setup information for the
@@ -843,7 +843,7 @@
             >, and add it to your configuration. Be sure to commit your changes.
           </p>
         </section>
-        <section>
+        <section id="example-solution-1-2">
           <h2>Example solution</h2>
           <p>Adding the <code>numpydoc-validation</code> hook:</p>
           <pre>
@@ -855,7 +855,7 @@
             </code>
           </pre>
         </section>
-        <section>
+        <section id="running-hooks-on-demand">
           <h2>Running hooks on demand</h2>
           <div class="r-stack" style="justify-content: start">
             <p
@@ -890,7 +890,7 @@
           </pre>
           </div>
         </section>
-        <section>
+        <section id="docstring-validation">
           <h2>Validating docstrings</h2>
           <div class="r-stack" style="justify-content: start">
             <p
@@ -943,15 +943,15 @@
             <small><em>Output abbreviated.</em></small>
           </div>
         </section>
-        <section>
+        <section id="modifying-hooks">
           <h2>Modifying hook behavior</h2>
           <p>Two options:</p>
           <ul>
-            <li>via command line arguments</li>
-            <li>via a configuration file</li>
+            <li class="fragment">via command line arguments</li>
+            <li class="fragment">via a configuration file</li>
           </ul>
         </section>
-        <section>
+        <section id="modifying-hooks-with-args">
           <h3>Modifying hook behavior with command line arguments</h3>
           <p>
             For behavior that you only want to happen when the tool is run as a
@@ -970,7 +970,7 @@
             </code>
           </pre>
         </section>
-        <section>
+        <section id="modifying-hooks-with-configuration-file">
           <h3>Modifying hook behavior with a configuration file</h3>
           <p>
             For settings that should be applied for every invocation of the
@@ -1000,7 +1000,7 @@
             </code>
           </pre>
         </section>
-        <section>
+        <section id="exercise-1-3">
           <h2>Exercise</h2>
           <p>
             Configure the <code>numpydoc-validation</code> hook to ignore the
@@ -1016,7 +1016,7 @@
             >
           </p>
         </section>
-        <section>
+        <section id="example-solution-1-3-pyproject">
           <h2>Example solution</h2>
           <p>
             First, specify which checks to report in the configuration file:
@@ -1035,7 +1035,7 @@
             </code>
           </pre>
         </section>
-        <section>
+        <section id="example-solution-1-3-docstrings">
           <p>Then, update the docstrings in <code>example.py</code>:</p>
           <pre>
             <code data-trim class="language-python">
@@ -1054,7 +1054,7 @@
             </code>
           </pre>
         </section>
-        <section>
+        <section id="excluding-files">
           <h2>Excluding files</h2>
           <p>
             The docstring checks are strict, but things like the test suite
@@ -1084,7 +1084,7 @@
             </em>
           </p>
         </section>
-        <section>
+        <section id="autoupdate">
           <h2>Keeping hooks up-to-date</h2>
           <p>
             Run <code>pre-commit autoupdate</code> to update all hooks to their
@@ -1103,7 +1103,7 @@
             running <code>pre-commit run --all-files</code>.
           </p>
         </section>
-        <section>
+        <section id="tips-for-using-hooks">
           <h2>Good to know</h2>
           <ul>
             <li class="fragment">
@@ -1127,10 +1127,10 @@
           </ul>
         </section>
 
-        <section>
+        <section id="creating-a-pre-commit-hook">
           <h1 class="center">Creating a Pre-Commit Hook</h1>
         </section>
-        <section>
+        <section id="hook-recipe">
           <h2>Recipe</h2>
           <ol>
             <li class="fragment">Implement the check(s) in a function.</li>
@@ -1139,7 +1139,7 @@
             <li class="fragment">Configure it as a hook.</li>
           </ol>
         </section>
-        <section>
+        <section id="hook-recipe-step-1">
           <h2>1. Implement the check(s) in a function.</h2>
           <pre>
             <code data-trim class="language-python hide-line-numbers" data-line-numbers="1-11|3,5|6,9|7,11">
@@ -1157,7 +1157,7 @@
             </code>
           </pre>
         </section>
-        <section>
+        <section id="example-check">
           <h3>Toy example</h3>
           <p>Only allow committing one file at a time:</p>
           <pre>
@@ -1176,7 +1176,7 @@
             </code>
           </pre>
         </section>
-        <section>
+        <section id="exif-stripper-simplified-check">
           <h3>Simplified example from <code>exif-stripper</code></h3>
           <p>
             This hook removes metadata from images, and the check is implemented
@@ -1216,7 +1216,7 @@
             >
           </div>
         </section>
-        <section>
+        <section id="helpful-hooks">
           <h2>What makes a helpful hook?</h2>
           <ol>
             <li class="fragment">
@@ -1229,7 +1229,7 @@
             </li>
           </ol>
         </section>
-        <section>
+        <section id="exercise-2-1">
           <h2>Exercise</h2>
           <p>
             Come up with your own check. It doesn't matter if something already
@@ -1237,7 +1237,7 @@
             check that enforces a file naming convention that you follow.
           </p>
         </section>
-        <section>
+        <section id="example-solution-2-1">
           <h2>Example solution</h2>
           <p>
             Require filenames to be at least three characters (without the
@@ -1260,7 +1260,7 @@
           </code>
         </pre>
         </section>
-        <section>
+        <section id="hook-recipe-step-2">
           <h2>2. Wrap your function in a CLI.</h2>
           <div class="r-stack" style="justify-content: start">
             <p
@@ -1321,7 +1321,7 @@
           </pre>
           </div>
         </section>
-        <section>
+        <section id="exif-stripper-simplified-cli">
           <h3>Simplified example from <code>exif-stripper</code></h3>
           <div class="r-stack" style="justify-content: start">
             <p
@@ -1391,7 +1391,7 @@
             >
           </div>
         </section>
-        <section>
+        <section id="exercise-2-2">
           <h2>Exercise</h2>
           <p>
             Create a CLI for the check function you created in the previous
@@ -1399,7 +1399,7 @@
             check behaves.
           </p>
         </section>
-        <section>
+        <section id="example-solution-2-2">
           <h2>Example solution</h2>
           <div class="r-stack" style="justify-content: start">
             <p
@@ -1465,7 +1465,7 @@
         </pre>
           </div>
         </section>
-        <section>
+        <section id="hook-recipe-step-3">
           <h2>3. Make it installable.</h2>
           <ul>
             <li class="fragment">Can be a package or standalone script</li>
@@ -1473,7 +1473,7 @@
             <li class="fragment">Should create an executable</li>
           </ul>
         </section>
-        <section>
+        <section id="exif-stripper-simplified-file-structure">
           <h3>Package example with <code>exif-stripper</code></h3>
           <div class="r-stack" style="justify-content: start">
             <p
@@ -1564,7 +1564,7 @@
             >
           </div>
         </section>
-        <section>
+        <section id="pyproject-toml">
           <h3><code>pyproject.toml</code></h3>
           <div class="r-stack" style="justify-content: start">
             <p
@@ -1667,7 +1667,7 @@
             >
           </div>
         </section>
-        <section>
+        <section id="exif-stripper-entry-point">
           <h3>Example of specifying the entry point</h3>
           <p>
             When the <code>exif_stripper</code> package is installed, an entry
@@ -1695,7 +1695,7 @@
             >
           </div>
         </section>
-        <section>
+        <section id="exercise-2-3">
           <h2>Exercise</h2>
           <p>
             Create a <code>pyproject.toml</code> for your hook from the previous
@@ -1706,7 +1706,7 @@
             <code>README.md</code>).
           </p>
         </section>
-        <section>
+        <section id="example-solution-2-3">
           <h2>Example solution</h2>
           <pre>
           <code data-trim class="language-toml">
@@ -1743,7 +1743,7 @@
           </code>
         </pre>
         </section>
-        <section>
+        <section id="hook-recipe-step-4">
           <h2>4. Configure it as a hook.</h2>
           <div class="r-stack" style="justify-content: start">
             <p
@@ -1823,7 +1823,7 @@
             >
           </div>
         </section>
-        <section>
+        <section id="exercise-2-4">
           <h2>Exercise</h2>
           <p>
             Create a <code>.pre-commit-hooks.yaml</code> file for configuring
@@ -1841,7 +1841,7 @@
             >
           </p>
         </section>
-        <section>
+        <section id="example-solution-2-4">
           <h2>Example solution</h2>
           <p>
             Continuing the example from previous exercises, we can use the
@@ -1858,7 +1858,7 @@
             </code>
         </pre>
         </section>
-        <section>
+        <section id="testing-hook-configuration">
           <h2>Testing the hook configuration</h2>
           <p>
             The best way to test that your hook is working correctly is from
@@ -1882,11 +1882,11 @@
             </li>
           </ul>
         </section>
-        <section>
+        <section id="exercise-2-5">
           <h2>Exercise</h2>
           <p>Test that your hook is properly configured.</p>
         </section>
-        <section>
+        <section id="maintaining-your-hook">
           <h2>Maintaining your hook</h2>
           <p class="fragment">
             There are several points of failure when building and maintaining a
@@ -1909,7 +1909,7 @@
             >
           </p>
         </section>
-        <section>
+        <section id="document-your-hook">
           <h2>Document your hook</h2>
           <p>
             Make it easy for people to get started with your hook by including a
@@ -1936,7 +1936,7 @@
             >
           </div>
         </section>
-        <section>
+        <section id="share-your-hook">
           <h2>Sharing your hook with the world</h2>
           <ul>
             <li class="fragment">
@@ -1953,7 +1953,7 @@
             </li>
           </ul>
         </section>
-        <section>
+        <section id="tips-for-creating-hooks">
           <h2>Good to know</h2>
           <ul>
             <li class="fragment">
