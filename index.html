@@ -172,6 +172,12 @@
       .hide-line-numbers .hljs-ln-numbers {
         display: none;
       }
+      .r-stack-left {
+        justify-content: start;
+      }
+      .r-stack-left > p {
+        margin: 0 !important;
+      }
     </style>
   </head>
   <body>
@@ -404,48 +410,24 @@
         </section>
         <section id="basic-configuration">
           <h3>Basic configuration</h3>
-          <div class="r-stack" style="justify-content: start">
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="0"
-              style="margin: 0"
-            >
+          <div class="r-stack r-stack-left">
+            <p class="fragment fade-in-then-out" data-fragment-index="0">
               Defined in <code>.pre-commit-config.yaml</code> at the repository
               root:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="1"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="1">
               The <code>repos</code> section lists the repositories to use:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="2"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="2">
               This represents the configuration for a single repository:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="3"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="3">
               The URL of the repository to clone:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="4"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="4">
               The tag or commit hash to clone at:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="5"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="5">
               The hooks to run from that repository:
             </p>
           </div>
@@ -592,40 +574,20 @@
         </section>
         <section id="adding-ruff">
           <h3>Adding <code>ruff</code></h3>
-          <div class="r-stack" style="justify-content: start">
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="0"
-              style="margin: 0"
-            >
+          <div class="r-stack r-stack-left">
+            <p class="fragment fade-in-then-out" data-fragment-index="0">
               Create a new entry under the <code>repos</code> key:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="1"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="1">
               The <code>ruff</code> pre-commit hook is in a separate repository:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="2"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="2">
               The tag or commit hash to clone at:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="3"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="3">
               The hooks to run from that repository:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="4"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="4">
               Use <code>args</code> to pass command line arguments to the hook:
             </p>
           </div>
@@ -653,35 +615,19 @@
         </section>
         <section id="committing-after-changing-the-configuration">
           <h3>Commit your changes</h3>
-          <div class="r-stack" style="justify-content: start">
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="0"
-              style="margin: 0"
-            >
+          <div class="r-stack r-stack-left">
+            <p class="fragment fade-in-then-out" data-fragment-index="0">
               This will trigger an update to the environment used for the
               checks:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="1"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="1">
               All new or modified hooks need to be updated in the environment:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="2"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="2">
               This will be slower the first time, but persists until
               modification:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="3"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="3">
               Hook order in the configuration file matters:
             </p>
           </div>
@@ -722,48 +668,24 @@
         </section>
         <section id="failing-checks">
           <h3>The commit fails</h3>
-          <div class="r-stack" style="justify-content: start">
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="0"
-              style="margin: 0"
-            >
+          <div class="r-stack r-stack-left">
+            <p class="fragment fade-in-then-out" data-fragment-index="0">
               No TOML or YAML files to check:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="1"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="1">
               No issues with these checks:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="2"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="2">
               <code>ruff</code> modified a file, which is an automatic failure:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="3"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="3">
               <code>ruff</code> found an unused import when linting:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="4"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="4">
               <code>ruff</code> summarizes its findings (sometimes we have to
               fix it):
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="5"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="5">
               <code>ruff</code> also made a change while formatting the file:
             </p>
           </div>
@@ -857,26 +779,14 @@
         </section>
         <section id="running-hooks-on-demand">
           <h2>Running hooks on demand</h2>
-          <div class="r-stack" style="justify-content: start">
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="0"
-              style="margin: 0"
-            >
+          <div class="r-stack r-stack-left">
+            <p class="fragment fade-in-then-out" data-fragment-index="0">
               Run all hooks on staged changes:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="1"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="1">
               Run all hooks on <code>example.py</code>:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="2"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="2">
               Run only the <code>numpydoc-validation</code> hook on all files:
             </p>
           </div>
@@ -892,27 +802,15 @@
         </section>
         <section id="docstring-validation">
           <h2>Validating docstrings</h2>
-          <div class="r-stack" style="justify-content: start">
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="0"
-              style="margin: 0"
-            >
+          <div class="r-stack r-stack-left">
+            <p class="fragment fade-in-then-out" data-fragment-index="0">
               Run <code>numpydoc-validation</code> hook on
               <code>example.py</code>:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="1"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="1">
               <code>example.py</code> fails the docstring checks:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="2"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="2">
               Without any additional configuration, all numpydoc checks are run:
             </p>
           </div>
@@ -1262,40 +1160,20 @@
         </section>
         <section id="hook-recipe-step-2">
           <h2>2. Wrap your function in a CLI.</h2>
-          <div class="r-stack" style="justify-content: start">
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="0"
-              style="margin: 0"
-            >
+          <div class="r-stack r-stack-left">
+            <p class="fragment fade-in-then-out" data-fragment-index="0">
               We will use <code>argparse</code> for this example:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="1"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="1">
               At a minimum, we need to accept filenames:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="2"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="2">
               We can then parse the received arguments:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="3"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="3">
               Run your check(s) on each item in <code>args.filenames</code>:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="4"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="4">
               Return 1 if there were any failures, 0 otherwise:
             </p>
           </div>
@@ -1323,34 +1201,18 @@
         </section>
         <section id="exif-stripper-simplified-cli">
           <h3>Simplified example from <code>exif-stripper</code></h3>
-          <div class="r-stack" style="justify-content: start">
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="0"
-              style="margin: 0"
-            >
+          <div class="r-stack r-stack-left">
+            <p class="fragment fade-in-then-out" data-fragment-index="0">
               Create the <code>ArgumentParser</code>:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="1"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="1">
               Parse the received arguments:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="2"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="2">
               Process each file, storing the outcomes (these are Boolean
               values):
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="3"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="3">
               Aggregate the results, returning 1 if there were any failures, 0
               otherwise:
             </p>
@@ -1401,34 +1263,18 @@
         </section>
         <section id="example-solution-2-2">
           <h2>Example solution</h2>
-          <div class="r-stack" style="justify-content: start">
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="0"
-              style="margin: 0"
-            >
+          <div class="r-stack r-stack-left">
+            <p class="fragment fade-in-then-out" data-fragment-index="0">
               Here, we continue with the hook requiring filenames of a certain
               length:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="1"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="1">
               Most of this is identical to the example:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="2"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="2">
               But, this time we add the minimum length as an optional argument:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="3"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="3">
               When we run the checks on each file, we also pass it in:
             </p>
           </div>
@@ -1475,64 +1321,32 @@
         </section>
         <section id="exif-stripper-simplified-file-structure">
           <h3>Package example with <code>exif-stripper</code></h3>
-          <div class="r-stack" style="justify-content: start">
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="0"
-              style="margin: 0"
-            >
+          <div class="r-stack r-stack-left">
+            <p class="fragment fade-in-then-out" data-fragment-index="0">
               Let's look at the file structure for a Python package:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="1"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="1">
               For this example, the repository name is
               <code>exif-stripper</code>:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="2"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="2">
               Configuration file to have <code>pre-commit</code> run hooks on
               our code:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="3"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="3">
               Configuration file for our new hook (for the
               <code>strip-exif</code> hook, here):
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="4"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="4">
               Important files for any codebase:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="5"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="5">
               This package uses the src-layout:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="6"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="6">
               Tests for the logic to make this easier to maintain:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="7"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="7">
               The <code>pyproject.toml</code> file is used to install this:
             </p>
           </div>
@@ -1566,26 +1380,14 @@
         </section>
         <section id="pyproject-toml">
           <h3><code>pyproject.toml</code></h3>
-          <div class="r-stack" style="justify-content: start">
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="0"
-              style="margin: 0"
-            >
+          <div class="r-stack r-stack-left">
+            <p class="fragment fade-in-then-out" data-fragment-index="0">
               This is a template <code>pyproject.toml</code> file:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="1"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="1">
               Name your distribution (likely the name of your repository):
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="2"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="2">
               Provide a version (can also be done
               <a
                 href="https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html#dynamic-metadata"
@@ -1594,32 +1396,16 @@
                 >dynamically</a
               >):
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="3"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="3">
               Include all your dependencies here:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="4"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="4">
               Provide information about your project:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="5"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="5">
               Creating a package is recommended for testing and reuse:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="6"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="6">
               Create an executable for calling your hook's CLI:
             </p>
           </div>
@@ -1745,57 +1531,29 @@
         </section>
         <section id="hook-recipe-step-4">
           <h2>4. Configure it as a hook.</h2>
-          <div class="r-stack" style="justify-content: start">
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="0"
-              style="margin: 0"
-            >
+          <div class="r-stack r-stack-left">
+            <p class="fragment fade-in-then-out" data-fragment-index="0">
               Configuration goes in
               <code>.pre-commit-hooks.yaml</code> as a list of hooks:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="1"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="1">
               The hook ID (we can use this to run just this hook):
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="2"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="2">
               Display name for the hook when the checks are run:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="3"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="3">
               (Optional) Description of what your hook does:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="4"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="4">
               The entry point or executable to run, which can also include
               arguments:
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="5"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="5">
               The language your hook is written in (so
               <code>pre-commit</code> can install it):
             </p>
-            <p
-              class="fragment fade-in-then-out"
-              data-fragment-index="6"
-              style="margin: 0"
-            >
+            <p class="fragment fade-in-then-out" data-fragment-index="6">
               (Optional) Restrict this hook to only run on certain file types:
             </p>
           </div>
