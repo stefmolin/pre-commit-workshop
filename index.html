@@ -1927,6 +1927,12 @@
     </div>
 
     <script src="https://unpkg.com/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+      integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+      crossorigin="anonymous"
+    ></script>
 
     <!--syntax highlighting in code snippets-->
     <script src="https://unpkg.com/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
@@ -1941,6 +1947,79 @@
         // Learn about plugins: https://revealjs.com/plugins/
         plugins: [RevealHighlight],
       });
+
+      // for working with dates/times
+      const { DateTime, Duration } = luxon;
+
+      // add exercise timer
+      let updateExerciseTimerInterval;
+      Reveal.addKeyBinding(
+        { keyCode: 84, key: "T", description: "Start the exercise timer" },
+        () => {
+          let exerciseTime = prompt(
+            "Timer duration in minutes (leave empty to cancel)"
+          );
+          const cleanup = () => {
+            clearInterval(updateExerciseTimerInterval);
+            $(".exercise-timer").remove();
+          };
+          if (
+            exerciseTime !== undefined &&
+            exerciseTime !== "" &&
+            exerciseTime !== null
+          ) {
+            if (!isNaN(exerciseTime) && exerciseTime >= 0.1) {
+              exerciseTime = Duration.fromMillis(exerciseTime * 60 * 1000);
+              const countDownTime = DateTime.now().plus(exerciseTime);
+
+              const getTimeText = (elapsedTime) =>
+                `⏱ ${elapsedTime.toFormat("mm:ss")}`;
+
+              if ($(".exercise-timer").length === 0) {
+                // add to DOM if not already there
+                $(".reveal").append(
+                  `<aside class="exercise-timer" style="display: block; position: absolute; ` +
+                    `top: 20px; left: 15px;` +
+                    `font-size: 50px;"></aside>`
+                );
+              }
+
+              // in case the key is pressed while a timer is already running, clear the old one
+              if (!isNaN(updateExerciseTimerInterval))
+                clearInterval(updateExerciseTimerInterval);
+
+              // write the starting time minus the 1 second delay before the update
+              const updateFrequency = 1000;
+              $(".exercise-timer").text(
+                getTimeText(
+                  exerciseTime.minus({ milliseconds: updateFrequency })
+                )
+              );
+
+              // update the remaining time each second
+              const updateTimer = () => {
+                const now = DateTime.now();
+                const elapsedTime = countDownTime.diff(now);
+                const secondsRemaining = elapsedTime.as("seconds");
+
+                if (secondsRemaining >= 1)
+                  $(".exercise-timer").text(getTimeText(elapsedTime));
+                else if (secondsRemaining >= 0) {
+                  $(".exercise-timer").text(
+                    getTimeText(Duration.fromMillis(0))
+                  );
+                } else if (secondsRemaining >= -5)
+                  $(".exercise-timer").text("TIME'S UP").css("color", "red");
+                else cleanup();
+              };
+              updateExerciseTimerInterval = setInterval(
+                updateTimer,
+                updateFrequency
+              );
+            }
+          } else cleanup();
+        }
+      );
     </script>
   </body>
 </html>
