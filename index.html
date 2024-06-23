@@ -1407,45 +1407,52 @@
               >):
             </p>
             <p class="fragment fade-in-then-out" data-fragment-index="3">
-              Include all your dependencies here:
-            </p>
-            <p class="fragment fade-in-then-out" data-fragment-index="4">
               Provide information about your project:
             </p>
+            <p class="fragment fade-in-then-out" data-fragment-index="4">
+              Include all dependencies required to use your hook here:
+            </p>
             <p class="fragment fade-in-then-out" data-fragment-index="5">
-              Creating a package is recommended for testing and reuse:
+              Optional dependencies for development of the hook go here,
+              instead:
             </p>
             <p class="fragment fade-in-then-out" data-fragment-index="6">
+              Creating a package is recommended for testing and reuse:
+            </p>
+            <p class="fragment fade-in-then-out" data-fragment-index="7">
               Create an executable for calling your hook's CLI:
             </p>
           </div>
           <div class="center fragment" data-fragment-index="0">
             <pre>
-            <code data-trim class="language-toml hide-line-numbers" data-line-numbers="1-28|6|7|8-9|10-21|26-28|23-24" data-fragment-index="1">
+            <code data-trim class="language-toml" data-line-numbers="1-31|6|7|8-17|19-20|21-24|29-31|27" data-fragment-index="1">
               [build-system]
               requires = ["setuptools", "setuptools-scm"]
               build-backend = "setuptools.build_meta"
 
               [project]
-              name = "example-pre-commit-hook"
+              name = "your-pre-commit-hook"
               version = "0.1.0"
-              dependencies = ["TODO"]
-              requires-python = ">=3.8"
-              authors = [{name = "Your Name", email = "Your Email"},]
+              authors = [{name = "Your Name", email = "email@example.com"},]
               description = "TODO"
               readme = "README.md"
               license = {file = "LICENSE"}
               classifiers = [
-                  "Development Status :: 4 - Beta",
+                  "Development Status :: 1 - Planning",  # update later
                   "Programming Language :: Python"
               ]
+              urls.Homepage = "https://example.com"
+              urls.Documentation = "https://example.com/docs"
 
-              [project.urls]
-              Homepage = "https://example.com"
-              Documentation = "https://example.com/docs"
+              dependencies = ["your-hook-dependencies"]
+              requires-python = ">=3.8"
+              optional-dependencies.dev = [
+                  "pre-commit",  # so you can run hooks on the codebase
+                  "pytest",  # remember to add tests for your hook
+              ]
 
-              [project.scripts]
-              script-name = "your_pkg.your_module:hook_function"
+              # TODO
+              scripts.script-name = "your_pkg.your_module:hook_function"
 
               # optional (if you are making a package)
               [tool.setuptools.packages.find]
@@ -1474,8 +1481,7 @@
           <div class="center">
             <pre>
             <code data-trim class="language-toml">
-              [project.scripts]
-              strip-exif = "exif_stripper.cli:main"
+              scripts.strip-exif = "exif_stripper.cli:main"
             </code>
           </pre>
             <small
