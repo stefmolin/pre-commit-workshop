@@ -80,4 +80,5 @@ Copy and paste the solution into `cli.py` and import the function from the previ
 
 1. Push up the changes if not already done so.
 2. Add a new entry to `.pre-commit-config.yaml` pointing to the same repo, specifying the commit hash.
-3. Use `pre-commit run <hook_id>` to check that it is working.
+3. Create a new file that has a name that is too short: `touch x.py`.
+4. Try to commit that file.
