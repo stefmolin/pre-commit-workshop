@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "your-pre-commit-hook"
+version = "0.1.0"
+dependencies = ["your-hook-dependencies"]
+requires-python = ">=3.8"
+authors = [{name = "Your Name", email = "email@example.com"},]
+description = "TODO"
+readme = "README.md"
+license = {file = "LICENSE"}
+classifiers = [
+    "Development Status :: 1 - Planning",  # update later
+    "Programming Language :: Python"
+]
+
+[project.urls]
+Homepage = "https://example.com"
+Documentation = "https://example.com/docs"
+
+[project.scripts]  # TODO
+script-name = "your_pkg.your_module:hook_function"
+
+[project.optional-dependencies]
+dev = [
+    "pre-commit",
+    "pytest",  # remember to add tests for your hook
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
