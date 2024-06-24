@@ -275,8 +275,16 @@
         <section id="agenda">
           <h2>Agenda</h2>
           <ol>
-            <li>Setting Up Pre-Commit Hooks</li>
-            <li>Creating a Pre-Commit Hook</li>
+            <li>
+              <a href="#setting-up-pre-commit-hooks"
+                >Setting Up Pre-Commit Hooks</a
+              >
+            </li>
+            <li>
+              <a href="#creating-a-pre-commit-hook">
+                Creating a Pre-Commit Hook</a
+              >
+            </li>
           </ol>
         </section>
         <section id="setting-up-pre-commit-hooks">
@@ -1957,8 +1965,35 @@
         controls: false,
         hash: true,
 
+        keyboard: {
+          // map numpad numbers to their top row equivalents
+          97: () => Reveal.triggerKey(49), // 1
+          98: () => Reveal.triggerKey(50), // 2
+        },
+
         // Learn about plugins: https://revealjs.com/plugins/
         plugins: [RevealHighlight],
+      });
+      [
+        {
+          name: "section 1",
+          key: "1",
+          id: "setting-up-pre-commit-hooks",
+          keyCode: 49,
+        },
+        {
+          name: "section 2",
+          key: "2",
+          id: "creating-a-pre-commit-hook",
+          keyCode: 50,
+        },
+      ].forEach(({ id, key, name, keyCode }) => {
+        Reveal.addKeyBinding(
+          { keyCode, key, description: `Jump to ${name}` },
+          () => {
+            window.location = `#/${id}`;
+          }
+        );
       });
 
       // for working with dates/times
