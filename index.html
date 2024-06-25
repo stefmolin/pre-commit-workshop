@@ -295,11 +295,11 @@
           <div>
             <ul>
               <li class="fragment fade-in" data-fragment-index="1">
-                Scripts triggered based on actions taken on a repository
+                Scripts triggered when taking certain actions on a repository
                 (<em>e.g.</em>, committing changes)
               </li>
               <li class="fragment fade-in" data-fragment-index="2">
-                Hooks can be client-side or server-side
+                Can be client-side or server-side
               </li>
               <li class="fragment fade-in" data-fragment-index="3">
                 Stored in the <code>.git/hooks/</code> directory of your
@@ -307,7 +307,7 @@
               </li>
             </ul>
             <pre class="fragment fade-in" data-fragment-index="3">
-              <code data-trim class="language-plaintext">
+              <code data-trim class="language-plaintext hide-line-numbers" data-line-numbers="1-7|4">
                 .git
                 └── hooks
                     ├── commit-msg.sample
@@ -363,12 +363,12 @@
             <ul>
               <li class="fragment fade-in" data-fragment-index="1">
                 <code>pre-commit</code> is "a multi-language package manager for
-                pre-commit hooks." (<a
+                pre-commit hooks" (<a
                   href="https://pre-commit.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   >source</a
-                >)
+                >).
               </li>
               <li class="fragment fade-in" data-fragment-index="2">
                 <code>pre-commit</code> installs its own script as the
@@ -922,7 +922,7 @@
           <h2>Exercise</h2>
           <p>
             Configure the <code>numpydoc-validation</code> hook to ignore the
-            checks ES01, EX01, SA01, and SS06. Then address any issues in
+            checks ES01, EX01, SA01, and SS06. Then, address any issues in
             <code>example.py</code> so that it passes the checks.
           </p>
           <p class="center">
@@ -1012,7 +1012,7 @@
             <code data-trim class="language-shell hide-line-numbers" data-line-numbers="1">
               $ pre-commit autoupdate
               Updating [...]/pre-commit-hooks ... updating v4.5.0 -> v4.6.0.
-              Updating [...]/ruff-pre-commit ... updating v0.1.5 -> v0.4.9.
+              Updating [...]/ruff-pre-commit ... updating v0.4.0 -> v0.4.9.
               Updating [...]/numpy/numpydoc ... already up to date.
             </code>
           </pre>
@@ -1041,6 +1041,16 @@
                 >pre-commit.com/hooks.html</a
               >
               for tips on finding hooks.
+            </li>
+            <li class="fragment">
+              Use <code>pre-commit run --all-files</code> to run your hooks in
+              CI/CD workflows (or you can use
+              <a
+                href="https://pre-commit.ci/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >pre-commit.ci</a
+              >).
             </li>
           </ul>
         </section>
@@ -1162,7 +1172,7 @@
             extension):
           </p>
           <pre>
-          <code data-trim class="language-python">
+          <code data-trim class="language-python hide-line-numbers" data-line-numbers="1-12|3|4-5|7-9|11-12">
             from pathlib import Path
 
             def validate_filename(filename: str, min_len: int = 3) -> int:
@@ -1334,9 +1344,9 @@
         <section id="hook-recipe-step-3">
           <h2>3. Make it installable.</h2>
           <ul>
-            <li class="fragment">Can be a package or standalone script</li>
-            <li class="fragment">Must state all dependencies</li>
-            <li class="fragment">Should create an executable</li>
+            <li class="fragment">It can be a package or standalone script.</li>
+            <li class="fragment">You must state all dependencies.</li>
+            <li class="fragment">Installation should create an executable.</li>
           </ul>
         </section>
         <section id="exif-stripper-simplified-file-structure">
@@ -1521,7 +1531,7 @@
         <section id="example-solution-2-3">
           <h2>Example solution</h2>
           <pre>
-          <code data-trim class="language-toml">
+          <code data-trim class="language-toml" data-line-numbers="1-33|6-17|19-20|26">
             [build-system]
             requires = ["setuptools", "setuptools-scm"]
             build-backend = "setuptools.build_meta"
@@ -1614,7 +1624,7 @@
           <h2>Exercise</h2>
           <p>
             Create a <code>.pre-commit-hooks.yaml</code> file for configuring
-            your hook from the previous exercise. Note that by default, hooks
+            your hook from the previous exercise. Note that, by default, hooks
             will run in parallel, if you need to run in serial, specify
             <code>require_serial: true</code>.
           </p>
@@ -1647,7 +1657,7 @@
         </section>
         <section id="testing-hook-configuration">
           <h2>Testing the hook configuration</h2>
-          <p>
+          <p class="fragment">
             The best way to test that your hook is working correctly is from
             another repository:
           </p>
@@ -1769,16 +1779,6 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 >pre-commit.com/#supported-languages</a
-              >).
-            </li>
-            <li class="fragment">
-              Use <code>pre-commit run --all-files</code> to run your hooks in
-              CI/CD workflows (or you can use
-              <a
-                href="https://pre-commit.ci/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >pre-commit.ci</a
               >).
             </li>
           </ul>
