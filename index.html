@@ -1281,7 +1281,7 @@
                       process_image(filename)
                       for filename in args.filenames
                   ]
-                  return min(1, sum(results))
+                  return int(any(results))
             </code>
           </pre>
             <small>
@@ -1355,7 +1355,7 @@
                     validate_filename(filename, args.min_len)
                     for filename in args.filenames
                 ]
-                return min(1, sum(results))
+                return int(any(results))
           </code>
         </pre>
           </div>
