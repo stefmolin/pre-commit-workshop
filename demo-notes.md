@@ -34,7 +34,7 @@ $ conda activate pre-commit-demo
 
 1. Copy `ruff` section from slides into `.pre-commit-config.yaml` file.
 2. Commit the changes.
-3. Create `example.py` file with issues for `ruff` to find (copying from slides).
+3. Create `example.py` file with issues for `ruff` to find (copying from slides and saving with `cmd+K` then `S` or `cmd+shift+P` &rarr; `File: Save without Formatting`).
 4. Try to commit the file.
 5. Run `git diff` to see the changes `ruff` makes.
 6. Stage the changes and commit again.
