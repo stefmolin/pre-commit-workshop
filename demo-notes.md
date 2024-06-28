@@ -10,6 +10,7 @@ Increase VS Code font size beforehand:
 2. Change font size to 24 (original is 12).
 3. Search for `terminal.integrated.font-size` and change it to 24 as well (original is 12).
 
+Uninstall pre-commit hooks: `pre-commit uninstall`
 
 ## Section 1 demos
 
