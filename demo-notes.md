@@ -10,16 +10,19 @@ Increase VS Code font size beforehand:
 2. Change font size to 24 (original is 12).
 3. Search for `terminal.integrated.font-size` and change it to 24 as well (original is 12).
 
-Uninstall pre-commit hooks: `pre-commit uninstall`
+Create a fresh virtual environment:
+
+```shell
+$ conda create --name pre-commit-demo python=3.12
+$ conda activate pre-commit-demo
+```
 
 ## Section 1 demos
 
 ### Pre-commit package installation
 
 1. Branch off of `main` (name it after the event).
-2. Create a new virtual environment there: `python3 -m venv venv`.
-3. Activate the virtual environment: `source venv/bin/activate`.
-4. Run `python3 -m pip install pre-commit`.
+2. With a pre-made virtual environment activated, run `python3 -m pip install pre-commit`.
 
 ### Install first set of hooks
 
