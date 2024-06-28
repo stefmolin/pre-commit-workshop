@@ -79,7 +79,6 @@ Copy and paste the solution into `cli.py` and import the function from the previ
 
 ### Test the hook
 
-1. Push up the changes if not already done so.
-2. Add a new entry to `.pre-commit-config.yaml` pointing to the same repo, specifying the commit hash.
-3. Create a new file that has a name that is too short: `touch x.py`.
-4. Try to commit that file.
+1. Commit the changes if not already done so.
+2. Create a new file that has a name that is too short: `touch x.py`.
+3. `pre-commit try-repo .  --files x.py`
