@@ -134,6 +134,12 @@
       p {
         font-size: 0.75em;
       }
+      ul.references {
+        font-size: 0.65em;
+      }
+      #bio ul {
+        font-size: 0.715em;
+      }
       ul > li:not(:last-child),
       ol > li:not(:last-child) {
         margin-bottom: 0.5em;
@@ -218,7 +224,7 @@
               <a
                 href="https://numpydoc.readthedocs.io/en/latest/validation.html#docstring-validation-using-pre-commit-hook"
                 rel="noopener noreferrer"
-                >numpydoc</a
+                >numpydoc-validation</a
               >
               and
               <a
@@ -591,7 +597,9 @@
           </div>
         </section>
         <section id="adding-ruff">
-          <h3>Adding <code>ruff</code></h3>
+          <h3>
+            Adding <code>ruff</code> to <code>.pre-commit-config.yaml</code>
+          </h3>
           <div class="r-stack r-stack-left">
             <p class="fragment fade-in-then-out" data-fragment-index="0">
               Create a new entry under the <code>repos</code> key:
@@ -1165,6 +1173,11 @@
             exists for your idea. If you can't think of anything, try creating a
             check that enforces a file naming convention that you follow.
           </p>
+          <p>
+            Write your code in the
+            <code>src/your_pkg/your_module.py</code> file, renaming both the
+            directory and file as you see fit.
+          </p>
         </section>
         <section id="example-solution-2-1">
           <h2>Example solution</h2>
@@ -1290,6 +1303,11 @@
             Create a CLI for the check function you created in the previous
             exercise. Add an optional command line argument to modify how your
             check behaves.
+          </p>
+          <p>
+            You can put this in the same file from the previous exercise or in
+            another file in the same directory (<em>e.g.</em>,
+            <code>src/your_pkg/cli.py</code>).
           </p>
         </section>
         <section id="example-solution-2-2">
@@ -1521,12 +1539,14 @@
         <section id="exercise-2-3">
           <h2>Exercise</h2>
           <p>
-            Create a <code>pyproject.toml</code> for your hook from the previous
-            exercise. Feel free to start by copying the example. Be sure to
-            create an entry point that will hit the CLI. Confirm that you can
-            <code>pip install</code> it (note that you will need to create any
-            files referenced in the <code>pyproject.toml</code>, such as
-            <code>README.md</code>).
+            Using the provided template, populate the
+            <code>pyproject.toml</code> file for your hook from the previous
+            exercise. Be sure to create an entry point that will hit the CLI.
+          </p>
+          <p>
+            Confirm that you can <code>pip install</code> it (note that you will
+            need to create any files referenced in the
+            <code>pyproject.toml</code>, such as <code>README.md</code>).
           </p>
         </section>
         <section id="example-solution-2-3">
@@ -1699,6 +1719,10 @@
               Run your test suite on different operating systems and Python
               versions.
             </li>
+            <li class="fragment">
+              Use <code>pre-commit</code> to run your hooks in your CI/CD
+              workflows.
+            </li>
           </ul>
           <p class="fragment">
             <em
@@ -1786,7 +1810,7 @@
         </section>
         <section id="references">
           <h2>References</h2>
-          <ul>
+          <ul class="references">
             <li>
               Setup article:
               <a
@@ -1859,6 +1883,23 @@
                   >
                 </li>
               </ul>
+            </li>
+            <li>
+              Example of
+              <a
+                href="https://github.com/search?q=repo%3Anumpy%2Fnumpydoc+path%3Anumpydoc%2Fhooks%2F**+parse_config+OR+find_project_root&type=code"
+                target="_blank"
+                rel="noopener noreferrer"
+                >finding and parsing configuration files</a
+              >
+              like <code>pyproject.toml</code> (from the
+              <a
+                href="https://github.com/numpy/numpydoc"
+                target="_blank"
+                rel="noopener noreferrer"
+                >numpydoc-validation</a
+              >
+              hook)
             </li>
             <li>
               Python Packaging User Guide:
