@@ -792,6 +792,17 @@
               >numpydoc.readthedocs.io/en/latest/validation.html</a
             >, and add it to your configuration. Be sure to commit your changes.
           </p>
+          <p>
+            <em
+              >Tip: You can run the following to check for any formatting
+              errors:</em
+            >
+          </p>
+          <pre>
+            <code data-trim class="language-shell">
+              $ pre-commit validate-config .pre-commit-config.yaml
+            </code>
+          </pre>
         </section>
         <section id="example-solution-1-2">
           <h2>Example solution</h2>
@@ -1647,17 +1658,26 @@
             Create a <code>.pre-commit-hooks.yaml</code> file for configuring
             your hook from the previous exercise. Note that, by default, hooks
             will run in parallel, if you need to run in serial, specify
-            <code>require_serial: true</code>.
-          </p>
-          <p>
-            Listing of configuration options:
+            <code>require_serial: true</code>. Be sure to consult
             <a
               href="https://pre-commit.com/#creating-new-hooks"
               target="_blank"
               rel="noopener noreferrer"
               >pre-commit.com/#creating-new-hooks</a
             >
+            for a listing of the configuration options.
           </p>
+          <p>
+            <em
+              >Tip: You can run the following to check for any formatting
+              errors:</em
+            >
+          </p>
+          <pre>
+            <code data-trim class="language-shell">
+              $ pre-commit validate-manifest .pre-commit-hooks.yaml
+            </code>
+          </pre>
         </section>
         <section id="example-solution-2-4">
           <h2>Example solution</h2>
