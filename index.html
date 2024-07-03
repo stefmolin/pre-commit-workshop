@@ -915,7 +915,7 @@
           </p>
           <pre>
             <code data-trim class="language-toml hide-line-numbers" data-line-numbers="2-3|5-7|9-21">
-              # pyproject.toml (tool must support this file)
+              # pyproject.toml (the tool must support this file)
               [tool.ruff]
               line-length = 88
 
@@ -925,16 +925,16 @@
 
               [tool.ruff.lint]
               select = [
-                  "C",  # mccabe rules
-                  "F",  # pyflakes rules
-                  "E",  # pycodestyle error rules
-                  "W",  # pycodestyle warning rules
-                  "B",  # flake8-bugbear rules
-                  "I",  # isort rules
+                  "B", # flake8-bugbear rules
+                  "C", # mccabe rules
+                  "E", # pycodestyle error rules
+                  "F", # pyflakes rules
+                  "I", # isort rules
+                  "W", # pycodestyle warning rules
               ]
               ignore = [
-                  "C901",  # max-complexity-10
-                  "E501",  # line-too-long
+                  "C901", # max-complexity-10
+                  "E501", # line-too-long
               ]
             </code>
           </pre>
