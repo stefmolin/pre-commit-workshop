@@ -630,7 +630,7 @@
                     - id: trailing-whitespace
 
                 - repo: https://github.com/astral-sh/ruff-pre-commit
-                  rev: v0.4.0
+                  rev: v0.4.10
                   hooks:
                     - id: ruff
                       args: [--fix, --exit-non-zero-on-fix, --show-fixes]
@@ -899,7 +899,7 @@
           <pre>
             <code data-trim class="language-yaml hide-line-numbers" data-line-numbers="4-5">
               - repo: https://github.com/astral-sh/ruff-pre-commit
-                rev: v0.4.0
+                rev: v0.4.10
                 hooks:
                   - id: ruff
                     args: [--fix, --exit-non-zero-on-fix, --show-fixes]
@@ -914,10 +914,16 @@
             tool:
           </p>
           <pre>
-            <code data-trim class="language-toml hide-line-numbers" data-line-numbers="2-15|16-19">
+            <code data-trim class="language-toml hide-line-numbers" data-line-numbers="2-3|5-7|9-21">
               # pyproject.toml (tool must support this file)
               [tool.ruff]
               line-length = 88
+
+              [tool.ruff.format]
+              indent-style = "space"
+              quote-style = "single"
+
+              [tool.ruff.lint]
               select = [
                   "C",  # mccabe rules
                   "F",  # pyflakes rules
@@ -930,10 +936,6 @@
                   "C901",  # max-complexity-10
                   "E501",  # line-too-long
               ]
-
-              [tool.ruff.format]
-              indent-style = "space"
-              quote-style = "single"
             </code>
           </pre>
         </section>
@@ -1031,7 +1033,7 @@
             <code data-trim class="language-shell hide-line-numbers" data-line-numbers="1">
               $ pre-commit autoupdate
               Updating [...]/pre-commit-hooks ... updating v4.5.0 -> v4.6.0.
-              Updating [...]/ruff-pre-commit ... updating v0.4.0 -> v0.4.9.
+              Updating [...]/ruff-pre-commit ... updating v0.4.10 -> v0.5.0.
               Updating [...]/numpy/numpydoc ... already up to date.
             </code>
           </pre>
