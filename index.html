@@ -240,9 +240,12 @@
                 >Hands-On Data Analysis with Pandas</a
               >"
             </li>
-            <li>🎓 BS in operations research from Columbia University</li>
             <li>
-              🎓 MS in computer science (ML specialization) from Georgia Tech
+              🎓 Bachelor's in operations research from Columbia University
+            </li>
+            <li>
+              🎓 Master's in computer science (ML specialization) from Georgia
+              Tech
             </li>
           </ul>
         </section>
@@ -357,7 +360,7 @@
                 include and save it as <code>.git/hooks/pre-commit</code>,
               </li>
               <li class="fragment fade-in" data-fragment-index="2">
-                or, use a tool like <code>pre-commit</code> and include the hook
+                Or, use a tool like <code>pre-commit</code> and include the hook
                 configuration in version control.
               </li>
             </ol>
@@ -496,7 +499,7 @@
           <p>
             The <code>check-yaml</code> hook we included will make sure that the
             <code>.pre-commit-config.yaml</code> file (and any other YAML files
-            in this repository) are valid YAML. Try committing it:
+            in this repository) is valid YAML. Try committing it:
           </p>
           <pre>
             <code data-trim class="language-shell hide-line-numbers" data-line-numbers="1-2|3-6|7-11">
@@ -1089,7 +1092,7 @@
           </ol>
         </section>
         <section id="hook-recipe-step-1">
-          <h2>1. Implement the check(s) in a function.</h2>
+          <h2>1. Implement the check(s) in a function</h2>
           <pre>
             <code data-trim class="language-python hide-line-numbers" data-line-numbers="1-11|3,5|6,9|7,11">
               from typing import Sequence
@@ -1168,14 +1171,14 @@
         <section id="helpful-hooks">
           <h2>What makes a helpful hook?</h2>
           <ol>
-            <li class="fragment">Runs quickly.</li>
+            <li class="fragment">Runs quickly</li>
             <li class="fragment">
               Tells you what is wrong and where the issue is (the file and,
-              potentially, line number).
+              potentially, line number)
             </li>
             <li class="fragment">
               Fixes the file for you, if possible, or, if not, guides you to the
-              fix.
+              fix
             </li>
           </ol>
         </section>
@@ -1216,7 +1219,7 @@
         </pre>
         </section>
         <section id="hook-recipe-step-2">
-          <h2>2. Wrap your function in a CLI.</h2>
+          <h2>2. Wrap your function in a CLI</h2>
           <div class="r-stack r-stack-left">
             <p class="fragment fade-in-then-out" data-fragment-index="0">
               We will use <code>argparse</code> for this example:
@@ -1374,7 +1377,7 @@
           </div>
         </section>
         <section id="hook-recipe-step-3">
-          <h2>3. Make it installable.</h2>
+          <h2>3. Make it installable</h2>
           <ul>
             <li class="fragment">It can be a package or standalone script.</li>
             <li class="fragment">You must state all dependencies.</li>
@@ -1603,7 +1606,7 @@
         </pre>
         </section>
         <section id="hook-recipe-step-4">
-          <h2>4. Configure it as a hook.</h2>
+          <h2>4. Configure it as a hook</h2>
           <div class="r-stack r-stack-left">
             <p class="fragment fade-in-then-out" data-fragment-index="0">
               Configuration goes in
