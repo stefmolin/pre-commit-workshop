@@ -37,9 +37,9 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Package files
         run: |
-          mkdir -p slides/${{ secrets.SLIDES_DIR }}/images && \
-            cp index.html slides/${{ secrets.SLIDES_DIR }}/ && \
-            cp images/* slides/${{ secrets.SLIDES_DIR }}/images/;
+          mkdir -p slides/images && \
+            cp index.html slides/ && \
+            cp images/* slides/images/;
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
