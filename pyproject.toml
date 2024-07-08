@@ -29,3 +29,33 @@ scripts.your-script-name = "your_pkg.your_module:hook_function"
 # optional (if you are making a package)
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.format]
+indent-style = "space"
+quote-style = "single"
+
+[tool.ruff.lint]
+select = [
+    "B", # flake8-bugbear rules
+    "C", # mccabe rules
+    "E", # pycodestyle error rules
+    "F", # pyflakes rules
+    "I", # isort rules
+    "W", # pycodestyle warning rules
+]
+ignore = [
+    "C901", # max-complexity-10
+    "E501", # line-too-long
+]
+
+[tool.numpydoc_validation]
+checks = [
+    "all",  # report on all checks
+    "ES01", # but don't require an extended summary
+    "EX01", # or examples
+    "SA01", # or a see also section
+    "SS06", # and don't require the summary to fit on one line
+]
