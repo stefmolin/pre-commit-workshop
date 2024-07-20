@@ -1704,14 +1704,9 @@
         </section>
         <section id="testing-hook-configuration">
           <h2>Testing the hook configuration</h2>
-          <p class="fragment">
-            The best way to test that your hook is working correctly is from
-            another repository:
-          </p>
           <ul>
             <li class="fragment">
-              Run <code>pre-commit try-repo</code> from another repository
-              without committing. (<a
+              Run <code>pre-commit try-repo</code>. (<a
                 href="https://pre-commit.com/#developing-hooks-interactively"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -1729,6 +1724,68 @@
         <section id="exercise-2-5">
           <h2>Exercise</h2>
           <p>Test that your hook is properly configured.</p>
+        </section>
+        <section id="example-solution-2-5">
+          <h2>Example solution</h2>
+          <div class="r-stack r-stack-left">
+            <p class="fragment fade-in-then-out" data-fragment-index="0">
+              Start by creating a file that will fail the check:
+            </p>
+            <p class="fragment fade-in-then-out" data-fragment-index="1">
+              Run <code>pre-commit try-repo</code> passing in the file:
+            </p>
+            <p class="fragment fade-in-then-out" data-fragment-index="2">
+              Now, <code>pre-commit</code> will generate a configuration for us:
+            </p>
+            <p class="fragment fade-in-then-out" data-fragment-index="3">
+              Think of this as the <code>.pre-commit-config.yaml</code> file
+              that will be used:
+            </p>
+            <p class="fragment fade-in-then-out" data-fragment-index="4">
+              The <code>repo</code> points to the path we passed to
+              <code>pre-commit try-repo</code>:
+            </p>
+            <p class="fragment fade-in-then-out" data-fragment-index="5">
+              The <code>rev</code> is set to the most recent commit hash:
+            </p>
+            <p class="fragment fade-in-then-out" data-fragment-index="6">
+              The hooks are pulled out of <code>.pre-commit-hooks.yaml</code>:
+            </p>
+            <p class="fragment fade-in-then-out" data-fragment-index="7">
+              Just like before, <code>pre-commit</code> will need to set up the
+              environment:
+            </p>
+            <p class="fragment fade-in-then-out" data-fragment-index="8">
+              As expected, <code>x.py</code> fails the
+              <code>validate-filename</code> check:
+            </p>
+          </div>
+          <div class="center fragment" data-fragment-index="0">
+            <pre>
+                <code data-trim class="language-shell hide-line-numbers" data-line-numbers="1|2|3-12|7-11|8|9|10-11|13-15|16-20"  data-fragment-index="1">
+                  $ touch x.py
+                  $ pre-commit try-repo . --files x.py
+                  [INFO] Initializing environment for ..
+                  =============================================================
+                  Using config:
+                  =============================================================
+                  repos:
+                  -   repo: .
+                      rev: e11041f74c8a0f074f0633138506dce2efe9c5e7
+                      hooks:
+                      -   id: validate-filename
+                  =============================================================
+                  [INFO] Installing environment for ..
+                  [INFO] Once installed this environment will be reused.
+                  [INFO] This may take a few minutes...
+                  validate-filename......................................Failed
+                  - hook id: validate-filename
+                  - exit code: 1
+
+                  Name too short (min_len=3): x.py
+                </code>
+            </pre>
+          </div>
         </section>
         <section id="maintaining-your-hook">
           <h2>Maintaining your hook</h2>
