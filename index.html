@@ -124,7 +124,8 @@
         --r-heading4-size: 0.85em;
       }
       .reveal .slides > section,
-      .reveal .pdf-page > section {
+      .reveal .pdf-page > section,
+      .reveal .slides > .scroll-page {
         text-align: left !important;
       }
       h6 {
@@ -2227,13 +2228,9 @@
 
       // make sure the footer shows up on the PDF version and the regular slides
       const footer = $("#footer-info").html();
-      if (window.location.search.match(/print-pdf/gi)) {
-        Reveal.addEventListener("ready", function (event) {
-          $(".slide-background").append(footer);
-        });
-      } else {
-        $("div.reveal").append(footer);
-      }
+      Reveal.addEventListener("ready", function (event) {
+        $(".slide-background").append(footer);
+      });
     </script>
   </body>
 </html>
