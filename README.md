@@ -28,3 +28,9 @@ The slides are licensed under a
 [cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
 [cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
 [cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
+
+
+## Note
+
+This branch was used for the live demos at EuroPython 2024.
+![banner](https://github.com/user-attachments/assets/b7d56e50-5547-4e84-9c0b-c8649a50a1fe)
