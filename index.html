@@ -1201,7 +1201,8 @@
             Require filenames to be at least three characters (without the
             extension):
           </p>
-          <pre>
+          <div class="center">
+            <pre>
           <code data-trim class="language-python hide-line-numbers" data-line-numbers="1-12|3|4-5|7-9|11-12">
             from pathlib import Path
 
@@ -1217,6 +1218,11 @@
                 return int(failure)
           </code>
         </pre>
+            <small
+              >Contents of
+              <code>src/filename_validation/validate_filename.py</code></small
+            >
+          </div>
         </section>
         <section id="hook-recipe-step-2">
           <h2>2. Wrap your function in a CLI</h2>
@@ -1345,9 +1351,11 @@
           </div>
           <div class="center fragment" data-fragment-index="0">
             <pre>
-          <code data-trim class="language-python hide-line-numbers" data-line-numbers="1-26|1-12,19-26|13-18|23" data-fragment-index="1">
+          <code data-trim class="language-python hide-line-numbers" data-line-numbers="1-28|1-14,21-28|15-20|25" data-fragment-index="1">
             import argparse
             from typing import Sequence
+
+            from .validate_filename import validate_filename
 
             def main(argv: Sequence[str] | None = None) -> int:
                 parser = argparse.ArgumentParser(
@@ -1374,6 +1382,9 @@
                 return int(any(results))
           </code>
         </pre>
+            <small
+              >Contents of <code>src/filename_validation/cli.py</code></small
+            >
           </div>
         </section>
         <section id="hook-recipe-step-3">
