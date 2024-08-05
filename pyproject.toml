@@ -17,7 +17,7 @@ urls.Homepage = "https://example.com"
 urls.Documentation = "https://example.com/docs"
 
 dependencies = ["your-hook-dependencies"]
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 optional-dependencies.dev = [
     "pre-commit",  # so you can run hooks on the codebase
     "pytest",  # remember to add tests for your hook
