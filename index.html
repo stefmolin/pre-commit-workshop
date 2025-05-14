@@ -462,7 +462,7 @@
               <code data-trim class="language-yaml" data-line-numbers="1-8|1|2-8|2|3|4-8" data-fragment-index="1">
                 repos:
                   - repo: https://github.com/pre-commit/pre-commit-hooks
-                    rev: v4.5.0
+                    rev: v4.6.0
                     hooks:
                       - id: check-toml
                       - id: check-yaml
@@ -546,7 +546,7 @@
             <code data-trim class="language-diff hide-line-numbers" data-line-numbers="5-6">
                repos:
                  - repo: https://github.com/pre-commit/pre-commit-hooks
-                   rev: v4.5.0
+                   rev: v4.6.0
                    hooks:
               +      - id: check-executables-have-shebangs
               +      - id: check-shebang-scripts-are-executable
@@ -628,7 +628,7 @@
             <code data-trim class="language-yaml" data-line-numbers="10-15|10|11|12-15|14" data-fragment-index="1">
               repos:
                 - repo: https://github.com/pre-commit/pre-commit-hooks
-                  rev: v4.5.0
+                  rev: v4.6.0
                   hooks:
                     - id: check-toml
                     - id: check-yaml
@@ -636,7 +636,7 @@
                     - id: trailing-whitespace
 
                 - repo: https://github.com/astral-sh/ruff-pre-commit
-                  rev: v0.4.10
+                  rev: v0.11.9
                   hooks:
                     - id: ruff
                       args: [--fix, --exit-non-zero-on-fix, --show-fixes]
@@ -905,7 +905,7 @@
           <pre>
             <code data-trim class="language-yaml hide-line-numbers" data-line-numbers="4-5">
               - repo: https://github.com/astral-sh/ruff-pre-commit
-                rev: v0.4.10
+                rev: v0.11.9
                 hooks:
                   - id: ruff
                     args: [--fix, --exit-non-zero-on-fix, --show-fixes]
@@ -1039,8 +1039,8 @@
           <pre>
             <code data-trim class="language-shell hide-line-numbers" data-line-numbers="1">
               $ pre-commit autoupdate
-              Updating [...]/pre-commit-hooks ... updating v4.5.0 -> v4.6.0.
-              Updating [...]/ruff-pre-commit ... updating v0.4.10 -> v0.5.1.
+              Updating [...]/pre-commit-hooks ... updating v4.6.0 -> v5.0.0.
+              Updating [...]/ruff-pre-commit ... already up to date.
               Updating [...]/numpy/numpydoc ... already up to date.
             </code>
           </pre>
