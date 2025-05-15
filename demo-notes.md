@@ -17,6 +17,8 @@ $ conda create --name pre-commit-demo python=3.12
 $ conda activate pre-commit-demo
 ```
 
+Disable Copilot completions by clicking the icon in the bottom right of VS Code.
+
 ## Section 1 demos
 
 ### Pre-commit package installation
