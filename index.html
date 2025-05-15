@@ -1542,14 +1542,15 @@
           <h3>Example of specifying the entry point</h3>
           <p>
             When the <code>exif_stripper</code> package is installed, an entry
-            point (executable) called, <code>strip-exif</code>, is created
-            automatically, which when run calls the <code>main()</code> function
-            in the <code>exif_stripper.cli</code> module:
+            point (executable) called, <code>exif-stripper</code>, is created
+            automatically, which, when run, calls the
+            <code>main()</code> function in the
+            <code>exif_stripper.cli</code> module:
           </p>
           <div class="center">
             <pre>
             <code data-trim class="language-toml">
-              scripts.strip-exif = "exif_stripper.cli:main"
+              scripts.exif-stripper = "exif_stripper.cli:main"
             </code>
           </pre>
             <small
