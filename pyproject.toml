@@ -29,3 +29,22 @@ scripts.your-script-name = "your_pkg.your_module:hook_function"
 # optional (if you are making a package)
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.format]
+indent-style = "space"
+quote-style = "single"
+
+[tool.ruff.lint]
+select = [
+    "B", # flake8-bugbear rules
+    "E", # pycodestyle error rules
+    "F", # pyflakes rules
+    "I", # isort rules
+    "W", # pycodestyle warning rules
+]
+ignore = [
+    "E501", # line-too-long
+]
