@@ -920,7 +920,7 @@
             tool:
           </p>
           <pre>
-            <code data-trim class="language-toml hide-line-numbers" data-line-numbers="2-3|5-7|9-21">
+            <code data-trim class="language-toml hide-line-numbers" data-line-numbers="2-3|5-7|9-19">
               # pyproject.toml (the tool must support this file)
               [tool.ruff]
               line-length = 88
@@ -932,14 +932,12 @@
               [tool.ruff.lint]
               select = [
                   "B", # flake8-bugbear rules
-                  "C", # mccabe rules
                   "E", # pycodestyle error rules
                   "F", # pyflakes rules
                   "I", # isort rules
                   "W", # pycodestyle warning rules
               ]
               ignore = [
-                  "C901", # max-complexity-10
                   "E501", # line-too-long
               ]
             </code>
