@@ -1,0 +1,5 @@
+- id: validate-filename
+  name: validate-filename
+  description: This hook checks filename length.
+  entry: validate-filename
+  language: python
