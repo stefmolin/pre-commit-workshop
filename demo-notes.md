@@ -4,20 +4,22 @@ Run the demos in VS Code for the combined view of the file contents and the term
 
 ## Setup
 
-Increase VS Code font size beforehand:
+1. Increase VS Code font size beforehand:
 
-1. Open settings.
-2. Change font size to 24 (original is 12).
-3. Search for `terminal.integrated.font-size` and change it to 24 as well (original is 12).
+    1. Open settings.
+    2. Change font size to 24 (original is 12).
+    3. Search for `terminal.integrated.font-size` and change it to 24 as well (original is 12).
 
-Create a fresh virtual environment:
+3. Change `workbench.color.theme` to `Light High Contrast` (default `Dark Modern`).
 
-```shell
-$ conda create --name pre-commit-demo python=3.12
-$ conda activate pre-commit-demo
-```
+4. Create a fresh virtual environment:
+  
+    ```shell
+    $ conda create --name pre-commit-demo python=3.12
+    $ conda activate pre-commit-demo
+    ```
 
-Disable Copilot completions by clicking the icon in the bottom right of VS Code.
+5. Disable Copilot completions by clicking the icon in the bottom right of VS Code.
 
 ## Section 1 demos
 
