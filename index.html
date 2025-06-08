@@ -170,6 +170,19 @@
         font-size: 1.5vmin;
         padding-top: 0.5vmin;
       }
+      .print-pdf .license {
+        margin-bottom: -2vmin;
+      }
+      #last-modified {
+        display: none;
+        font-size: 1.25vmin;
+      }
+      .print-pdf #last-modified {
+        display: inline;
+      }
+      .print-pdf .footer > #website {
+        display: none;
+      }
       pre > code {
         padding: 20px !important;
         border-radius: 10px;
@@ -197,7 +210,7 @@
     <div class="reveal">
       <div id="footer-info" style="display: none">
         <div class="footer">
-          <a href="https://stefaniemolin.com">stefaniemolin.com</a>
+          <a id="website" href="https://stefaniemolin.com">stefaniemolin.com</a>
           <div class="license">
             License:
             <a
@@ -208,6 +221,13 @@
             >
               CC BY-NC-SA 4.0
             </a>
+          </div>
+          <div id="last-modified">
+            This was generated at
+            <span id="page-loaded-at"></span>. The latest version is at
+            <a href="https://stefaniemolin.com/pre-commit-workshop/"
+              >stefaniemolin.com/pre-commit-workshop/</a
+            >.
           </div>
         </div>
       </div>
@@ -2175,6 +2195,10 @@
 
       // for working with dates/times
       const { DateTime, Duration } = luxon;
+
+      // show the time at which the PDF was generated
+      const now = DateTime.now();
+      document.getElementById("page-loaded-at").innerHTML = now.toISO();
 
       // add exercise timer
       let updateExerciseTimerInterval;
