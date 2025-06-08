@@ -48,7 +48,7 @@ jobs:
           mkdir -p slides/images && \
             cp index.html slides/ && \
             cp images/* slides/images/ && \
-            cp slides.pdf;
+            cp slides.pdf slides/;
       - name: Upload artifact
         uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa  # v3.0.1
         with:
