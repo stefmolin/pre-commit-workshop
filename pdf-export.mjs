@@ -12,9 +12,9 @@ const slidesPath = path.join(
 console.log(`Navigating to ${slidesPath}`);
 await page.goto(slidesPath);
 
-await new Promise((r) => setTimeout(r, 2000));
+await new Promise((r) => setTimeout(r, 10_000));
 
-console.log(`Generating PDF version of the slides for ${await page.title()}`);
-await page.pdf({ path: "slides.pdf", format: "A4", timeout: 0 });
+console.log(`Generating PDF version of ${await page.title()}`);
+await page.pdf({ path: "slides.pdf", format: "A4", timeout: 0, margin: 0 });
 
 await browser.close();
