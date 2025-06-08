@@ -1,7 +1,7 @@
 import puppeteer from "puppeteer";
 import * as path from "path";
 
-const browser = await puppeteer.launch();
+const browser = await puppeteer.launch({ headless: true });
 const page = await browser.newPage();
 
 const slidesPath = path.join(
