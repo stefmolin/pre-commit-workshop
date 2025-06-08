@@ -636,9 +636,9 @@
                     - id: trailing-whitespace
 
                 - repo: https://github.com/astral-sh/ruff-pre-commit
-                  rev: v0.11.9
+                  rev: v0.11.10
                   hooks:
-                    - id: ruff
+                    - id: ruff-check
                       args: [--fix, --exit-non-zero-on-fix, --show-fixes]
                     - id: ruff-format
             </code>
@@ -730,8 +730,8 @@
               check yaml.........................(no files to check)Skipped
               fix end of files.......................................Passed
               trim trailing whitespace...............................Passed
-              ruff...................................................Failed
-              - hook id: ruff
+              ruff-check.............................................Failed
+              - hook id: ruff-check
               - exit code: 1
               - files were modified by this hook
 
@@ -905,9 +905,9 @@
           <pre>
             <code data-trim class="language-yaml hide-line-numbers" data-line-numbers="4-5">
               - repo: https://github.com/astral-sh/ruff-pre-commit
-                rev: v0.11.9
+                rev: v0.11.10
                 hooks:
-                  - id: ruff
+                  - id: ruff-check
                     args: [--fix, --exit-non-zero-on-fix, --show-fixes]
                   - id: ruff-format
             </code>
@@ -1644,7 +1644,13 @@
               <code>pre-commit</code> can install it):
             </p>
             <p class="fragment fade-in-then-out" data-fragment-index="6">
-              (Optional) Restrict this hook to only run on certain file types:
+              (Optional) Restrict this hook to only run on certain file
+              <a
+                href="https://pre-commit.com/#filtering-files-with-types"
+                target="_blank"
+                rel="noopener noreferrer"
+                >types</a
+              >:
             </p>
           </div>
           <div class="center fragment" data-fragment-index="0">
