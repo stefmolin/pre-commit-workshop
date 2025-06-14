@@ -16,7 +16,6 @@ Pre-commit hooks are code checks that run whenever you attempt to commit your ch
 
 2. Create a virtual environment using Python 3.10 or higher on your personal laptop, and install `pre-commit` in that virtual environment. You can use the tool of your choice (*e.g.*, `venv`, `conda`, `uv`).
 
-   
     <details>
     <summary>Using <code>venv</code></summary>
 
@@ -44,7 +43,7 @@ Pre-commit hooks are code checks that run whenever you attempt to commit your ch
    
     </details>
 
-4. Think about some potential ideas for the pre-commit hook you would like to create in the second half of the workshop. Some ideas to get you started: prohibit `print()` calls, enforce file naming conventions, block large files, keep files under a certain number of lines, check for missing docstrings, disallow certain imports, *etc.*
+3. Think about some potential ideas for the pre-commit hook you would like to create in the second half of the workshop. Some ideas to get you started: prohibit `print()` calls, enforce file naming conventions, block large files, keep files under a certain number of lines, check for missing docstrings, disallow certain imports, *etc.*
 
 
 ## About the Author
