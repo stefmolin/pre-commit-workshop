@@ -14,7 +14,13 @@ Pre-commit hooks are code checks that run whenever you attempt to commit your ch
 
 1. Fork and clone this repository. If you don't have a GitHub account, you will need to create one to complete this step. Please be sure to check for changes (and sync them) before coming to the workshop.
 
-2. Create a virtual environment using Python 3.10 or higher on your personal laptop, and install `pre-commit` in that virtual environment. You can use the tool of your choice (*e.g.*, `venv`, `conda`, `uv`). For example, you could complete this step using `venv` like so on Linux or MacOS:
+2. Create a virtual environment using Python 3.10 or higher on your personal laptop, and install `pre-commit` in that virtual environment. You can use the tool of your choice (*e.g.*, `venv`, `conda`, `uv`).
+
+   
+    <details>
+    <summary>Using <code>venv</code></summary>
+
+    On Linux or MacOS:
 
     ```shell
     python -m venv venv
@@ -24,8 +30,21 @@ Pre-commit hooks are code checks that run whenever you attempt to commit your ch
     ```
 
     See https://docs.python.org/3/library/venv.html for more information and the Windows equivalent if you decide to use `venv`.
+   
+    </details>
 
-3. Think about some potential ideas for the pre-commit hook you would like to create in the second half of the workshop. Some ideas to get you started: prohibit `print()` calls, enforce file naming conventions, block large files, keep files under a certain number of lines, check for missing docstrings, disallow certain imports, *etc.*
+    <details>
+    <summary>Using <code>uv</code></summary>
+
+    Note that this will install `pre-commit` as a tool for global use:
+
+    ```shell
+    uv tool install pre-commit --with pre-commit-uv
+    ```
+   
+    </details>
+
+4. Think about some potential ideas for the pre-commit hook you would like to create in the second half of the workshop. Some ideas to get you started: prohibit `print()` calls, enforce file naming conventions, block large files, keep files under a certain number of lines, check for missing docstrings, disallow certain imports, *etc.*
 
 
 ## About the Author
