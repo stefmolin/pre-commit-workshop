@@ -17,6 +17,7 @@ Pre-commit hooks are code checks that run whenever you attempt to commit your ch
     ```shell
     python -m venv venv
     source venv/bin/activate
+    python -m pip install -U pip
     python -m pip install pre-commit
     ```
 
