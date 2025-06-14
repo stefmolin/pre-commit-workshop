@@ -24,7 +24,7 @@ Pre-commit hooks are code checks that run whenever you attempt to commit your ch
 
 2. Fork and clone this repository. If you don't have a GitHub account, you will need to create one to complete this step. Please be sure to check for changes (and sync them) before coming to the workshop.
 
-3. Think about some potential ideas for the pre-commit hook you would like to create in the second half of the workshop. Some ideas to get you started: prohibit `print()` calls, enforce file naming conventions, block large files, keep files under a certain number of lines, check for missing docstrings, disallow certain imports, etc.
+3. Think about some potential ideas for the pre-commit hook you would like to create in the second half of the workshop. Some ideas to get you started: prohibit `print()` calls, enforce file naming conventions, block large files, keep files under a certain number of lines, check for missing docstrings, disallow certain imports, *etc.*
 
 
 ## About the Author
