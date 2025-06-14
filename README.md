@@ -38,6 +38,7 @@ Pre-commit hooks are code checks that run whenever you attempt to commit your ch
     Note that this will install `pre-commit` as a tool for global use:
 
     ```shell
+    uv python install  # install the version in .python-version if not already installed
     uv tool install pre-commit --with pre-commit-uv
     ```
    
