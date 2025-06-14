@@ -204,6 +204,15 @@
       .r-stack-left > p {
         margin: 0 !important;
       }
+      div.footnote {
+        margin-bottom: -15px;
+        padding-left: 10px;
+        width: 90%;
+      }
+      hr.footnote {
+        margin-left: 0;
+        width: 33%;
+      }
     </style>
   </head>
   <body>
@@ -406,9 +415,23 @@
               </li>
               <li class="fragment fade-in" data-fragment-index="3">
                 The installed pre-commit hook then runs <code>pre-commit</code>,
-                which in turn runs any checks you specify using a YAML file.
+                which in turn runs any checks you specify using a YAML file.<sup
+                  >*</sup
+                >
               </li>
             </ul>
+
+            <hr class="fragment fade-in footnote" data-fragment-index="3" />
+            <div class="fragment fade-in footnote" data-fragment-index="3">
+              <small
+                ><sup>*</sup>Check out my "<a
+                  href="https://stefaniemolin.com/articles/devx/pre-commit/behind-the-scenes/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >A Behind-the-Scenes Look at How Pre-Commit Works</a
+                >" article for more information.
+              </small>
+            </div>
           </div>
         </section>
         <section id="pre-commit-setup">
@@ -605,8 +628,8 @@
               and speed very is important with pre-commit hooks.
             </p>
 
-            <hr align="left" style="width: 33%" />
-            <div style="padding-left: 10px; width: 90%; margin-bottom: -15px">
+            <hr class="footnote" />
+            <div class="footnote">
               <small
                 ><sup>*</sup> Source:
                 <a
