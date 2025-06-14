@@ -12,7 +12,7 @@ Pre-commit hooks are code checks that run whenever you attempt to commit your ch
 
 ## Setup Instructions
 
-1. Create a virtual environment using Python 3.10 or higher on your personal laptop, and install pre-commit in that virtual environment. You can use the tool of your choice (*e.g.*, `venv`, `conda`, `uv`). For example, you could complete this step using `venv` like so on Linux or MacOS:
+1. Create a virtual environment using Python 3.10 or higher on your personal laptop, and install `pre-commit` in that virtual environment. You can use the tool of your choice (*e.g.*, `venv`, `conda`, `uv`). For example, you could complete this step using `venv` like so on Linux or MacOS:
 
     ```shell
     python -m venv venv
