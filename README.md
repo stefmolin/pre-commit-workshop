@@ -20,7 +20,7 @@ Pre-commit hooks are code checks that run whenever you attempt to commit your ch
     python -m pip install pre-commit
     ```
 
-    See https://docs.python.org/3/library/venv.html for more information and the Windows equivalent if you decide to use venv.
+    See https://docs.python.org/3/library/venv.html for more information and the Windows equivalent if you decide to use `venv`.
 
 2. Fork and clone this repository. If you don't have a GitHub account, you will need to create one to complete this step. Please be sure to check for changes (and sync them) before coming to the tutorial.
 
