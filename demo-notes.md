@@ -84,8 +84,8 @@ Run the demos in VS Code for the combined view of the file contents and the term
 
 ### Exercise 2.1 solution
 
-1. Rename the `your_pkg` folder to `filename_validation`.
-2. Add a new file to that package called `validate_filename.py`.
+1. Rename the `custom_hook` folder to `filename_validation`.
+2. Rename the `check.py` file to `validate_filename.py`.
 3. Copy and paste the contents for later.
 
 ### Exercise 2.2 solution
