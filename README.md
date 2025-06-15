@@ -29,7 +29,7 @@ Pre-commit hooks are code checks that run whenever you attempt to commit your ch
     ```
 
     See https://docs.python.org/3/library/venv.html for more information and the Windows equivalent if you decide to use `venv`.
-   
+
     </details>
 
     <details>
@@ -41,7 +41,7 @@ Pre-commit hooks are code checks that run whenever you attempt to commit your ch
     uv python install  # install the Python version in .python-version, if not already installed
     uv tool install pre-commit --with pre-commit-uv
     ```
-   
+
     </details>
 
 3. Think about some potential ideas for the pre-commit hook you would like to create in the second half of the workshop. Some ideas to get you started: prohibit `print()` calls, enforce file naming conventions, block large files, keep files under a certain number of lines, check for missing docstrings, disallow certain imports, *etc.*
