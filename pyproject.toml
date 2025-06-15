@@ -17,3 +17,7 @@ dev = [
     "pre-commit",  # so you can run hooks on the codebase
     # "pytest",  # remember to add tests for your hook
 ]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
