@@ -1566,12 +1566,16 @@
               instead:
             </p>
             <p class="fragment fade-in-then-out" data-fragment-index="6">
+              Build dependencies will be installed by the build front end
+              (<em>e.g.</em>, <code>pip</code>):
+            </p>
+            <p class="fragment fade-in-then-out" data-fragment-index="7">
               Create an executable for calling your hook's CLI:
             </p>
           </div>
           <div class="center fragment" data-fragment-index="0">
             <pre>
-            <code data-trim class="language-toml hide-line-numbers" data-line-numbers="1-31|2|3|4-6|8-9|15-19|13" data-fragment-index="1">
+            <code data-trim class="language-toml hide-line-numbers" data-line-numbers="1-23|2|3|4-6|8-9|15-19|21-23|13" data-fragment-index="1">
               [project]
               name = "pre-commit-workshop"
               version = "0.1.0"
@@ -1591,6 +1595,10 @@
                   "pre-commit",  # so you can run hooks on the codebase
                   # "pytest",  # remember to add tests for your hook
               ]
+
+              [build-system]
+              requires = ["hatchling"]
+              build-backend = "hatchling.build"
             </code>
           </pre>
             <small
@@ -1640,15 +1648,21 @@
             exercise. Be sure to create an entry point that will hit the CLI.
           </p>
           <p>
-            Confirm that you can <code>pip install</code> it (note that you will
-            need to create any files referenced in the
-            <code>pyproject.toml</code>, such as <code>README.md</code>).
+            Confirm that you can install it: <code>pip install -e .</code> or
+            <code>uv sync</code>. Note that you will need to declare any
+            dependencies outside the standard library and create any files
+            referenced in the <code>pyproject.toml</code>, such as
+            <code>README.md</code>.
           </p>
         </section>
         <section id="example-solution-2-3">
           <h2>Example solution</h2>
+          <p>
+            Replace the existing <code>[project]</code> section with the
+            following:
+          </p>
           <pre>
-          <code data-trim class="language-toml hide-line-numbers" data-line-numbers="1-19|2-8|10-11|13">
+          <code data-trim class="language-toml hide-line-numbers" data-line-numbers="1-13|2-8|10-11|13">
             [project]
             name = "filename-validation"
             version = "0.1.0"
@@ -1662,12 +1676,6 @@
             dependencies = []
 
             scripts.validate-filename = "filename_validation.cli:main"
-
-            [dependency-groups]
-            dev = [
-                "pre-commit",  # so you can run hooks on the codebase
-                # "pytest",  # remember to add tests for your hook
-            ]
           </code>
         </pre>
         </section>
