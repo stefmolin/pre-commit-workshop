@@ -35,8 +35,8 @@ Run the demos in VS Code for the combined view of the file contents and the term
 2. Run `tree .git/hooks` and discuss output.
 3. Run `less .git/hooks/pre-commit.sample` and discuss output.
 4. Create a version of the file that will get run: `cp .git/hooks/pre-commit.sample .git/hooks/pre-commit`.
-5. Edit the `.git/hooks/pre-commit` file to have `exit 1` near the top (automatic failure).
-6. Attempt to commit the slides PDF to this branch. Discuss why it failed.
+5. Edit the `.git/hooks/pre-commit` file to have `echo "Read-only -- no commits allowed"; exit 1;` near the top (automatic failure).
+6. Attempt to commit the slides PDF to this branch and then run `git status`. Discuss why it failed.
 7. Run `rm .git/hooks/pre-commit` to get rid of the automatic failure hook.
 8. Attempt the commit again. Discuss why it succeeds.
 9. Push the changes up so the PDF version of the slides is available for everyone.
