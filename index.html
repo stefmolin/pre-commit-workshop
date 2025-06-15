@@ -1532,46 +1532,31 @@
               instead:
             </p>
             <p class="fragment fade-in-then-out" data-fragment-index="6">
-              Creating a package is recommended for testing and reuse:
-            </p>
-            <p class="fragment fade-in-then-out" data-fragment-index="7">
               Create an executable for calling your hook's CLI:
             </p>
           </div>
           <div class="center fragment" data-fragment-index="0">
             <pre>
-            <code data-trim class="language-toml hide-line-numbers" data-line-numbers="1-31|6|7|8-17|19-20|21-24|29-31|27" data-fragment-index="1">
-              [build-system]
-              requires = ["setuptools", "setuptools-scm"]
-              build-backend = "setuptools.build_meta"
-
+            <code data-trim class="language-toml hide-line-numbers" data-line-numbers="1-31|2|3|4-6|8-9|15-19|13" data-fragment-index="1">
               [project]
-              name = "your-pre-commit-hook"
+              name = "pre-commit-workshop"
               version = "0.1.0"
               authors = [{name = "Your Name", email = "email@example.com"},]
-              description = "TODO"
+              description = "A pre-commit hook created during the workshop."
               readme = "README.md"
-              license = {file = "LICENSE"}
-              classifiers = [
-                  "Development Status :: 1 - Planning",  # update later
-                  "Programming Language :: Python"
-              ]
-              urls.Homepage = "https://example.com"
-              urls.Documentation = "https://example.com/docs"
 
-              dependencies = ["your-hook-dependencies"]
               requires-python = ">=3.10"
-              optional-dependencies.dev = [
+              dependencies = []  # TODO: declare any dependencies
+
+              # TODO: update `your-script-name` with the name of your choice
+              # TODO: update `pkg.module:function` to point to your function
+              scripts.your-script-name = "pkg.module:function"
+
+              [dependency-groups]
+              dev = [
                   "pre-commit",  # so you can run hooks on the codebase
-                  "pytest",  # remember to add tests for your hook
+                  # "pytest",  # remember to add tests for your hook
               ]
-
-              # TODO: update `your-script-name` and the path
-              scripts.your-script-name = "your_pkg.your_module:hook_function"
-
-              # optional (if you are making a package)
-              [tool.setuptools.packages.find]
-              where = ["src"]
             </code>
           </pre>
             <small
@@ -1629,11 +1614,7 @@
         <section id="example-solution-2-3">
           <h2>Example solution</h2>
           <pre>
-          <code data-trim class="language-toml hide-line-numbers" data-line-numbers="1-33|6-17|19-20|26">
-            [build-system]
-            requires = ["setuptools", "setuptools-scm"]
-            build-backend = "setuptools.build_meta"
-
+          <code data-trim class="language-toml hide-line-numbers" data-line-numbers="1-19|2-8|10-11|13">
             [project]
             name = "filename-validation"
             version = "0.1.0"
@@ -1642,27 +1623,17 @@
             ]
             description = "Validates that filenames meet criteria."
             readme = "README.md"
-            license = {file = "LICENSE"}
-            classifiers = [
-                "Development Status :: 3 - Alpha",
-                "Programming Language :: Python"
-            ]
 
-            dependencies = []
             requires-python = ">=3.10"
-            optional-dependencies.dev = [
-                "pre-commit",
-                "pytest",
-            ]
+            dependencies = []
 
             scripts.validate-filename = "filename_validation.cli:main"
 
-            [project.urls]
-            Homepage = "https://github.com/stefmolin/validate-filename"
-            Documentation = "https://stefaniemolin.com/validate-filename"
-
-            [tool.setuptools.packages.find]
-            where = ["src"]
+            [dependency-groups]
+            dev = [
+                "pre-commit",  # so you can run hooks on the codebase
+                # "pytest",  # remember to add tests for your hook
+            ]
           </code>
         </pre>
         </section>
