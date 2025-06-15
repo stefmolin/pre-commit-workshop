@@ -74,14 +74,31 @@ Run the demos in VS Code for the combined view of the file contents and the term
 ### Validating docstrings
 
 1. Run `pre-commit run numpydoc-validation --files example.py`.
-2. Copy exercise 1.3 solution into `pyproject.toml` and `example.py`, accordingly.
+2. Copy `ruff` settings from slide to `pyproject.toml`.
 3. Commit the changes.
+
+### Exercise 1.3 solution
+
+1. Copy exercise 1.3 solution into `pyproject.toml` and `example.py`, accordingly.
+2. Commit the changes.
+
+## Excluding files
+
+1. Add `exclude` section to `.pre-commit-config.yaml` for `numpydoc-validation`.
+2. Create `tests/test_check.py` (to test the `check.py` module) as a blank file.
+3. Commit these changes and emphasize that `numpydoc-validation` has `no files to check` in the output.
 
 ### Keeping hooks up-to-date
 
 1. Run `pre-commit autoupdate`.
 2. Run `pre-commit run --all-files`.
 3. Commit the changes.
+
+### `--no-verify`
+
+1. Edit `example.py` to remove the function docstring.
+2. Attempt to commit the changes without `--no-verify` and show that it fails.
+3. Commit again, but this time with `--no-verify` and show that none of the hooks run.
 
 ## Section 2 demos
 
