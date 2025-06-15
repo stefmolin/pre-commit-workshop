@@ -1,7 +1,7 @@
 [project]
 name = "pre-commit-workshop"
 version = "0.1.0"
-authors = [{name = "Your Name", email = "email@example.com"},]
+authors = [{name = "TODO", email = "TODO"},]
 description = "A pre-commit hook created during the workshop."
 readme = "README.md"
 
