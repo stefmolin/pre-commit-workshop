@@ -43,8 +43,11 @@ Run the demos in VS Code for the combined view of the file contents and the term
 
 ### Pre-commit package installation
 
-1. With a pre-made virtual environment activated, run `python3 -m pip install pre-commit`.
-2. Run `pre-commit --version` to show it worked.
+1. Poll the audience to see if more people are using `uv` or `pip`.
+2. Install `pre-commit` with the method most people are using:
+   - `pip`: With a pre-made virtual environment activated, run `python3 -m pip install pre-commit`.
+   - `uv`: Run `uv tool install pre-commit --with pre-commit-uv` (no need to activate anything).
+3. Run `pre-commit --version` to show it worked.
 
 ### Install first set of hooks
 
