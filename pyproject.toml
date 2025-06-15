@@ -14,4 +14,6 @@ scripts.your-script-name = "pkg.module:function"
 
 [dependency-groups]
 dev = [
-  "pre-commit",  # so you can run hooks
+    "pre-commit",  # so you can run hooks on the codebase
+    # "pytest",  # remember to add tests for your hook
+]
