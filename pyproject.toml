@@ -1,31 +1,19 @@
-[build-system]
-requires = ["setuptools", "setuptools-scm"]
-build-backend = "setuptools.build_meta"
-
 [project]
-name = "your-pre-commit-hook"
+name = "pre-commit-workshop"
 version = "0.1.0"
 authors = [{name = "Your Name", email = "email@example.com"},]
-description = "TODO"
+description = "A pre-commit hook created during the workshop."
 readme = "README.md"
-license = {file = "LICENSE"}
-classifiers = [
-    "Development Status :: 1 - Planning",  # update later
-    "Programming Language :: Python"
-]
-urls.Homepage = "https://example.com"
-urls.Documentation = "https://example.com/docs"
 
-dependencies = ["your-hook-dependencies"]
 requires-python = ">=3.10"
-optional-dependencies.dev = [
+dependencies = []  # TODO: declare any dependencies
+
+# TODO: update `your-script-name` with the name of your choice
+# TODO: update `pkg.module:function` to point to your function
+scripts.your-script-name = "pkg.module:function"
+
+[dependency-groups]
+dev = [
     "pre-commit",  # so you can run hooks on the codebase
-    "pytest",  # remember to add tests for your hook
+    # "pytest",  # remember to add tests for your hook
 ]
-
-# TODO: update `your-script-name` and the path
-scripts.your-script-name = "your_pkg.your_module:hook_function"
-
-# optional (if you are making a package)
-[tool.setuptools.packages.find]
-where = ["src"]
