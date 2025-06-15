@@ -481,13 +481,33 @@
             </ol>
           </div>
         </section>
-        <section id="pre-commit-package-installation">
-          <h3>Package installation</h3>
+        <section id="pre-commit-package-installation-pip">
+          <h3>Package installation with <code>pip</code></h3>
           <pre>
             <code data-trim class="language-shell">
               $ python3 -m pip install pre-commit
             </code>
           </pre>
+        </section>
+        <section id="pre-commit-package-installation-uv">
+          <h3>Package installation with <code>uv</code></h3>
+          <pre>
+            <code data-trim class="language-shell">
+              $ uv tool install pre-commit --with pre-commit-uv
+            </code>
+          </pre>
+          <hr class="footnote" />
+          <div class="footnote">
+            <small
+              ><sup>*</sup> It's also possible to use
+              <code>uv add --dev pre-commit</code> to install as a development
+              dependency; however, you will then need to prefix each call to
+              <code>pre-commit</code> with <code>uv run</code>, which will make
+              it harder to follow along with the workshop. Installing it this
+              way also rewires <code>pre-commit</code> to use <code>uv</code>,
+              which will speed things up.</small
+            >
+          </div>
         </section>
         <section id="basic-configuration">
           <h3>Basic configuration</h3>
