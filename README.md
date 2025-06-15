@@ -14,7 +14,7 @@ Pre-commit hooks are code checks that run whenever you attempt to commit your ch
 
 1. Fork and clone this repository. If you don't have a GitHub account, you will need to create one to complete this step. Please be sure to check for changes (and sync them) before coming to the workshop.
 
-2. Create a virtual environment using Python 3.10 or higher on your personal laptop, and install `pre-commit` in that virtual environment. You can use the tool of your choice (*e.g.*, `venv`, `conda`, `uv`).
+2. Create a virtual environment using Python 3.10 or higher on your personal laptop, and install `pre-commit` in that virtual environment. You can use the tool of your choice (*e.g.*, `venv`, `conda`, `uv`), but do not attempt to install the project itself.
 
     <details>
     <summary>Using <code>venv</code></summary>
