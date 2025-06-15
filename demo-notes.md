@@ -106,23 +106,28 @@ Run the demos in VS Code for the combined view of the file contents and the term
 
 1. Rename the `custom_hook` folder to `filename_validation`.
 2. Rename the `check.py` file to `validate_filename.py`.
-3. Copy and paste the contents for later.
+3. Copy and paste the contents.
+4. Commit the changes with `--no-verify`.
 
 ### Exercise 2.2 solution
 
-Copy and paste the solution into `cli.py` and import the function from the previous exercise.
+1. Copy and paste the solution into `cli.py`.
+2. Commit the changes with `--no-verify`.
 
 ### Exercise 2.3 solution
 
 1. Replace the placeholder contents in `pyproject.toml` with the example solution.
-2. Run `pip install .`.
-3. Confirm that the script is available by running `validate-filename --help`.
-4. Run `validate-filename x.py` to show how it will be used.
+2. Optionally, show the results of `git diff pyproject.toml`.
+3. Run `pip install -e .` OR `uv sync` depending on what the majority of the people are using (as revealed in the initial poll).
+4. Confirm that the script is available by running `validate-filename --help`.
+5. Run `validate-filename x.py` to show how it will be used.
+6. Commit the changes (including the `uv.lock` file if `uv` was used).
 
 ### Exercise 2.4 solution
 
 1. Create `.pre-commit-hooks.yaml`.
 2. Copy and paste the solution there.
+3. Commit the changes.
 
 ### Test the hook
 
