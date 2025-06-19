@@ -1373,7 +1373,7 @@
               from typing import Sequence
 
               def main(argv: Sequence[str] | None = None) -> int:
-                  parser = argparse.ArgumentParser(prog='strip-exif')
+                  parser = argparse.ArgumentParser(prog='exif-stripper')
                   parser.add_argument(
                       'filenames',
                       nargs='*',
@@ -1490,17 +1490,17 @@
             </p>
             <p class="fragment fade-in-then-out" data-fragment-index="2">
               Configuration file to have <code>pre-commit</code> run hooks on
-              our code:
+              the code:
             </p>
             <p class="fragment fade-in-then-out" data-fragment-index="3">
-              Configuration file for our new hook (for the
+              Configuration file for the hook (for the
               <code>strip-exif</code> hook, here):
             </p>
             <p class="fragment fade-in-then-out" data-fragment-index="4">
               Important files for any codebase:
             </p>
             <p class="fragment fade-in-then-out" data-fragment-index="5">
-              This package uses the src-layout:
+              This package uses the <code>src</code> layout:
             </p>
             <p class="fragment fade-in-then-out" data-fragment-index="6">
               Tests for the logic to make this easier to maintain:
