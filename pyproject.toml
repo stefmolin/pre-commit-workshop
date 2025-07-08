@@ -1,5 +1,5 @@
 [project]
-name = "pre-commit-workshop"
+name = "custom-hook"
 version = "1.0.0"
 dependencies = [
     "pre-commit",
