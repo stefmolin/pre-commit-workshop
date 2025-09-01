@@ -1336,7 +1336,7 @@
                   parser = argparse.ArgumentParser(prog='your-hook')
                   parser.add_argument(
                       'filenames',
-                      nargs='*',
+                      nargs='+',
                       help='Filenames to process.',
                   )
 
@@ -1376,7 +1376,7 @@
                   parser = argparse.ArgumentParser(prog='exif-stripper')
                   parser.add_argument(
                       'filenames',
-                      nargs='*',
+                      nargs='+',
                       help='Filenames to process.',
                   )
 
@@ -1446,7 +1446,7 @@
                 )
                 parser.add_argument(
                     'filenames',
-                    nargs='*',
+                    nargs='+',
                     help='Filenames to process.',
                 )
                 parser.add_argument(
