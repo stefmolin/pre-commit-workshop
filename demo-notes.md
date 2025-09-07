@@ -10,6 +10,8 @@ Run the demos in VS Code for the combined view of the file contents and the term
     2. Change font size to 24 (original is 12).
     3. Search for `terminal.integrated.font-size` and change it to 24 as well (original is 12).
 
+2. Adjust command prompt to avoid wrapping.
+
 3. Change `workbench.color.theme` to `Light High Contrast` (default `Dark Modern`).
 
 4. Create a fresh virtual environment:
@@ -26,6 +28,10 @@ Run the demos in VS Code for the combined view of the file contents and the term
    ```shell
    $ curl -OJ https://stefaniemolin.com/pre-commit-workshop/slides.pdf
    ```
+
+7. Delete existing `.git/hooks/pre-commit` file in this repository.
+
+8. Depending on how reliable the WiFi will be, run `uv tool uninstall pre-commit`.
 
 ## Section 1 demos
 
@@ -45,8 +51,12 @@ Run the demos in VS Code for the combined view of the file contents and the term
 
 1. Poll the audience to see if more people are using `uv` or `pip`.
 2. Install `pre-commit` with the method most people are using:
-   - `pip`: With a pre-made virtual environment activated, run `python3 -m pip install pre-commit`.
-   - `uv`: Run `uv tool install pre-commit --with pre-commit-uv` (no need to activate anything).
+   - `pip`:
+       1. Activate the pre-made virtual environment: `conda activate pre-commit-demo`
+       2. Run `python3 -m pip install pre-commit`.
+   - `uv`:
+       1. Run `uv sync` to set up the project.
+       2. Run `uv tool install pre-commit --with pre-commit-uv` (no need to activate anything).
 3. Run `pre-commit --version` to show it worked.
 
 ### Install first set of hooks
@@ -134,3 +144,8 @@ Run the demos in VS Code for the combined view of the file contents and the term
 1. Commit the changes if not already done so.
 2. Create a new file that has a name that is too short: `touch x.py`.
 3. `pre-commit try-repo .  --files x.py`
+
+## Post-workshop Cleanup
+
+1. Commit and push final changes to the demo branch.
+2. Undo command prompt and VS Code setting changes listed in the setup section.
