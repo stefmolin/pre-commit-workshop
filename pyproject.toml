@@ -1,16 +1,16 @@
 [project]
-name = "custom-hook"
+name = "filename-validation"
 version = "0.1.0"
-authors = [{name = "TODO", email = "TODO@TODO"},]
-description = "A pre-commit hook created during the workshop."
+authors = [
+  {name = "Stefanie Molin", email = "email@example.com"},
+]
+description = "Validates that filenames meet criteria."
 readme = "README.md"
 
 requires-python = ">=3.10"
-dependencies = []  # TODO: declare any dependencies
+dependencies = []
 
-# TODO: update `your-script-name` with the name of your choice
-# TODO: update `pkg.module:function` to point to your function
-scripts.your-script-name = "pkg.module:function"
+scripts.validate-filename = "filename_validation.cli:main"
 
 [dependency-groups]
 dev = [
