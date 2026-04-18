@@ -1736,8 +1736,10 @@
           <p>
             Create a <code>.pre-commit-hooks.yaml</code> file for configuring
             your hook from the previous exercise. Note that, by default, hooks
-            will run in parallel, if you need to run in serial, specify
-            <code>require_serial: true</code>. Be sure to consult
+            will run in parallel, meaning that files will be processed in
+            batches. If you need to process all files at once, specify
+            <code>require_serial: true</code> to run in serial instead. Be sure
+            to consult
             <a
               href="https://pre-commit.com/#creating-new-hooks"
               target="_blank"
