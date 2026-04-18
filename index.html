@@ -724,16 +724,18 @@
           <h3>Commit your changes</h3>
           <div class="r-stack r-stack-left">
             <p class="fragment fade-in-then-out" data-fragment-index="0">
-              This once again triggers an update to the environment used for
-              running the checks:
+              This once again triggers an update to the environments used for
+              running the checks (it creates a separate one for running
+              <code>ruff</code>):
             </p>
             <p class="fragment fade-in-then-out" data-fragment-index="1">
-              All hooks that were added or modified hooks need to be updated in
-              the environment:
+              All hooks that were added or modified will trigger updates to
+              their respective environments (one environment per
+              <code>repo</code>):
             </p>
             <p class="fragment fade-in-then-out" data-fragment-index="2">
-              This will be slower the first time, but the environment persists
-              until modification:
+              This will be slower the first time, but the environments persist
+              until their respective <code>repo</code> sections are modified:
             </p>
             <p class="fragment fade-in-then-out" data-fragment-index="3">
               Hook order in the configuration file matters &ndash; hooks run in
