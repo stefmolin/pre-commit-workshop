@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <!-- Google tag (gtag.js) -->
@@ -2230,7 +2230,7 @@
           { keyCode, key, description: `Jump to ${name}` },
           () => {
             window.location = `#/${id}`;
-          }
+          },
         );
       });
 
@@ -2268,7 +2268,7 @@
                   autocomplete="off"
                 />
               </div>
-            `
+            `,
             )
             .on("keypress", function (e) {
               if (e.which === 13) {
@@ -2286,7 +2286,7 @@
                 ) {
                   if (!isNaN(exerciseTime) && exerciseTime >= 0.1) {
                     exerciseTime = Duration.fromMillis(
-                      exerciseTime * 60 * 1000
+                      exerciseTime * 60 * 1000,
                     );
                     const countDownTime = DateTime.now().plus(exerciseTime);
 
@@ -2298,7 +2298,7 @@
                       $(".reveal").append(
                         `<aside class="exercise-timer" style="display: block; position: absolute; ` +
                           `top: 20px; left: 15px;` +
-                          `font-size: 50px;"></aside>`
+                          `font-size: 50px;"></aside>`,
                       );
                     }
 
@@ -2310,8 +2310,8 @@
                     const updateFrequency = 1000;
                     $(".exercise-timer").text(
                       getTimeText(
-                        exerciseTime.minus({ milliseconds: updateFrequency })
-                      )
+                        exerciseTime.minus({ milliseconds: updateFrequency }),
+                      ),
                     );
 
                     // update the remaining time each second
@@ -2324,7 +2324,7 @@
                         $(".exercise-timer").text(getTimeText(elapsedTime));
                       else if (secondsRemaining >= 0) {
                         $(".exercise-timer").text(
-                          getTimeText(Duration.fromMillis(0))
+                          getTimeText(Duration.fromMillis(0)),
                         );
                       } else if (secondsRemaining >= -5)
                         $(".exercise-timer")
@@ -2334,14 +2334,14 @@
                     };
                     updateExerciseTimerInterval = setInterval(
                       updateTimer,
-                      updateFrequency
+                      updateFrequency,
                     );
                   }
                 } else cleanup();
               }
             });
           $(`#${inputId}`).focus();
-        }
+        },
       );
 
       // make sure the footer shows up on the PDF version and the regular slides
