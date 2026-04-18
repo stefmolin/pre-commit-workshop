@@ -537,7 +537,7 @@
               <code data-trim class="language-yaml" data-line-numbers="1-8|1|2-8|2|3|4-8" data-fragment-index="1">
                 repos:
                   - repo: https://github.com/pre-commit/pre-commit-hooks
-                    rev: v5.0.0
+                    rev: v6.0.0
                     hooks:
                       - id: check-toml
                       - id: check-yaml
@@ -621,7 +621,7 @@
             <code data-trim class="language-diff hide-line-numbers" data-line-numbers="5-6">
                repos:
                  - repo: https://github.com/pre-commit/pre-commit-hooks
-                   rev: v5.0.0
+                   rev: v6.0.0
                    hooks:
               +      - id: check-executables-have-shebangs
               +      - id: check-shebang-scripts-are-executable
@@ -703,7 +703,7 @@
             <code data-trim class="language-yaml" data-line-numbers="10-15|10|11|12-15|14" data-fragment-index="1">
               repos:
                 - repo: https://github.com/pre-commit/pre-commit-hooks
-                  rev: v5.0.0
+                  rev: v6.0.0
                   hooks:
                     - id: check-toml
                     - id: check-yaml
@@ -711,7 +711,7 @@
                     - id: trailing-whitespace
 
                 - repo: https://github.com/astral-sh/ruff-pre-commit
-                  rev: v0.11.12
+                  rev: v0.15.10
                   hooks:
                     - id: ruff-check
                       args: [--fix, --exit-non-zero-on-fix, --show-fixes]
@@ -805,7 +805,7 @@
               check yaml.........................(no files to check)Skipped
               fix end of files.......................................Passed
               trim trailing whitespace...............................Passed
-              ruff-check.............................................Failed
+              ruff check.............................................Failed
               - hook id: ruff-check
               - exit code: 1
               - files were modified by this hook
@@ -816,7 +816,7 @@
 
               Found 1 error (1 fixed, 0 remaining).
 
-              ruff-format............................................Failed
+              ruff format............................................Failed
               - hook id: ruff-format
               - files were modified by this hook
 
@@ -891,7 +891,7 @@
           <pre>
             <code data-trim class="language-yaml">
               - repo: https://github.com/numpy/numpydoc
-                rev: v1.8.0
+                rev: v1.10.0
                 hooks:
                   - id: numpydoc-validation
             </code>
@@ -936,25 +936,21 @@
           </div>
           <div class="center fragment" data-fragment-index="0">
             <pre>
-            <code data-trim class="language-shell hide-line-numbers" data-line-numbers="1|2-4|6-18" data-fragment-index="1">
+            <code data-trim class="language-shell hide-line-numbers" data-line-numbers="1|2-4|6-14" data-fragment-index="1">
               $ pre-commit run numpydoc-validation --files example.py
               numpydoc-validation.....................................Failed
               - hook id: numpydoc-validation
               - exit code: 1
 
-              +---------------------+-------+------------------------------+
-              | item                | check | description                  |
-              +=====================+=======+==============================+
-              | example             | GL08  | The object missing docstring |
-              +---------------------+-------+------------------------------+
-              | example.my_function | ES01  | No extended summary found    |
-              +---------------------+-------+------------------------------+
-              | example.my_function | PR01  | Param {'a'} not documented   |
-              +---------------------+-------+------------------------------+
-              | example.my_function | SA01  | See Also section not found   |
-              +---------------------+-------+------------------------------+
-              | example.my_function | EX01  | No examples section found    |
-              +---------------------+-------+------------------------------+
+              example.py:1: GL08 The object does not have a docstring
+
+              example.py:1: ES01 No extended summary found
+
+              example.py:1: PR01 Parameters {'a'} not documented
+
+              example.py:1: SA01 See Also section not found
+
+              example.py:1: EX01 No examples section found
 
             </code>
           </pre>
@@ -965,8 +961,15 @@
           <h2>Modifying hook behavior</h2>
           <p>Two options:</p>
           <ul>
-            <li class="fragment">via command line arguments</li>
-            <li class="fragment">via a configuration file</li>
+            <li class="fragment">
+              via command line arguments (in
+              <code>.pre-commit-config.yaml</code>)
+            </li>
+            <li class="fragment">
+              via a configuration file (<em>e.g.</em>,
+              <code>pyproject.toml</code>, <code>ruff.toml</code>,
+              <em>etc.</em>)
+            </li>
           </ul>
         </section>
         <section id="modifying-hooks-with-args">
@@ -980,7 +983,7 @@
           <pre>
             <code data-trim class="language-yaml hide-line-numbers" data-line-numbers="4-5">
               - repo: https://github.com/astral-sh/ruff-pre-commit
-                rev: v0.11.12
+                rev: v0.15.10
                 hooks:
                   - id: ruff-check
                     args: [--fix, --exit-non-zero-on-fix, --show-fixes]
@@ -1083,7 +1086,7 @@
           <pre>
             <code data-trim class="language-diff hide-line-numbers" data-line-numbers="5">
               - repo: https://github.com/numpy/numpydoc
-                rev: v1.8.0
+                rev: v1.10.0
                 hooks:
                   - id: numpydoc-validation
             +       exclude: (tests|docs)/.*
@@ -1113,7 +1116,7 @@
             <code data-trim class="language-shell hide-line-numbers" data-line-numbers="1">
               $ pre-commit autoupdate
               [...]/pre-commit-hooks ... already up to date!
-              [...]/ruff-pre-commit ... updating v0.11.12 -> v0.11.13
+              [...]/ruff-pre-commit ... updating v0.15.10 -> v0.15.11
               [...]/numpy/numpydoc ... already up to date!
             </code>
           </pre>
