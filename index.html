@@ -1340,7 +1340,7 @@
                   parser = argparse.ArgumentParser(prog='your-hook')
                   parser.add_argument(
                       'filenames',
-                      nargs='+',
+                      nargs='+',  # require at least one (can provide more)
                       help='Filenames to process.',
                   )
 
