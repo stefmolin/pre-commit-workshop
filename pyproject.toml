@@ -40,3 +40,12 @@ select = [
 ignore = [
     "E501", # line-too-long
 ]
+
+[tool.numpydoc_validation]
+checks = [
+    "all",  # report on all checks
+    "ES01", # but don't require an extended summary
+    "EX01", # or examples
+    "SA01", # or a see also section
+    "SS06", # and don't require the summary to fit on one line
+]
